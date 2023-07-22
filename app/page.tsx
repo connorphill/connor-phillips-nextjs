@@ -1,17 +1,14 @@
-import Image from 'next/image';
-import Header from './header';
-import Footer from './footer';
+import Card from '@/components/Card';
 
 export default function Home() {
   return (
-    <main>
-      <div className='container'>
-        <Header />
-        <div className='bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl'>
-          <div>Test</div>
+    <div className='container mx-auto'>
+      <div className='flex'>
+        <div className='flex-auto flex-col justify-center p-2'>
+          <Card />
+          <Card />
         </div>
-        <Footer />
       </div>
-    </main>
+    </div>
   );
 }
