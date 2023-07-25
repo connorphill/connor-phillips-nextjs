@@ -7,6 +7,9 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    container: {
+      padding: '4rem',
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
