@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className='container mx-auto'>
       <div className='flex'>
-        <div className='flex-auto flex-col basis-4/6 p-2 border-b-2 divide-y'>
+        <div className='flex-auto flex-col basis-4/6 py-2 divide-y'>
           {cardBoilerplate()}
         </div>
         <div className='flex-auto flex-col hidden md:flex md:basis-2/6 pt-2'>

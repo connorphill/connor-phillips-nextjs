@@ -2,9 +2,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from './theme-provider';
-import Header from './header';
 import Footer from './footer';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import TopNav from '@/components/Global/TopNav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,8 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <main>
-            <Header />
-            <ThemeSwitcher />
+            <TopNav />
             {children}
             <Footer />
           </main>

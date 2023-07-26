@@ -14,7 +14,7 @@ export default function Card() {
             alt='Test'
           />
         </div>
-        <div>
+        <div id='card-body'>
           <a
             href='#'
             className='pb-1 text-cyan-300 hover:text-cyan-500 hover:before:scale-x-100 hover:before:origin-left text-xl relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-cyan-500 before:absolute before:left-0 before:bottom-0'
