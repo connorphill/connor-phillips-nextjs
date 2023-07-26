@@ -1,12 +1,14 @@
 'use client';
 import React, { useState } from 'react';
 import { ThemeSwitcher } from '../ThemeSwitcher';
+import TopicsNav from './TopicsNav';
 
 export default function TopNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
+
   return (
     <nav className='bg-gray-100'>
-      <div className='container mx-auto flex items-center py-4 border border-blue-400'>
+      <div className='container relative mx-auto flex items-center justify-between py-4 border border-blue-400'>
         {/* Logo */}
         <div className='flex'>
           <h1 className='text-5xl'>
@@ -16,39 +18,7 @@ export default function TopNav() {
         {/* Primary Nav */}
         <div className='hidden lg:flex ml-20'>
           <ul className='flex flex-row space-x-10'>
-            <li className='flex flex-row'>
-              <a href='' className='flex'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  strokeWidth={1.5}
-                  stroke='currentColor'
-                  className='w-6 h-6'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25'
-                  />
-                </svg>
-                <p className='ml-2 mr-2'>Topics</p>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  strokeWidth={1.5}
-                  stroke='currentColor'
-                  className='w-6 h-6'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M19.5 8.25l-7.5 7.5-7.5-7.5'
-                  />
-                </svg>
-              </a>
-            </li>
+            <TopicsNav />
             <li className='flex flex-row'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -87,11 +57,11 @@ export default function TopNav() {
           </ul>
         </div>
         {/* Theme Switcher */}
-        <div className='hidden lg:flex'>
+        <div className='hidden lg:flex justify-end'>
           <ThemeSwitcher />
         </div>
         {/* Mobile Button */}
-        <div className='lg:hidden flex items-center justify-right'>
+        <div className='lg:hidden flex items-center'>
           <button
             onClick={() => {
               setMobileMenu(!mobileMenu);
@@ -115,7 +85,14 @@ export default function TopNav() {
         </div>
       </div>
       {/* Mobile Menu */}
-      <div className={`${mobileMenu ? 'flex divide-y' : 'hidden'}`}>
+      <div
+        className={`${
+          mobileMenu
+            ? 'flex divide-y origin-top animate-open-mobile-menu transition'
+            : 'hidden'
+        }`}
+        id='mobile-menu'
+      >
         <ul>
           <li className='block p-4'>
             <a href=''>Link #1</a>

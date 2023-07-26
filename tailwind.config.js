@@ -11,10 +11,15 @@ module.exports = {
       padding: '4rem',
     },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      keyframes: {
+        'open-menu': {
+          '0%': { transform: 'scaleY(0)' },
+          '80%': { transform: 'scaleY(0.8)' },
+          '100%': { transform: 'scaleY(1)' },
+        },
+      },
+      animation: {
+        'open-mobile-menu': 'open-menu 0.5s forwards',
       },
     },
   },
