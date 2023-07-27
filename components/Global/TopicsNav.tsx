@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 
 export default function TopicsNav() {
-  const [topicsMenu, setTopicsMenu] = useState(true);
+  const [topicsMenu, setTopicsMenu] = useState(false);
   return (
-    <>
+    <div className='relative'>
       {/* Nav Link */}
-      <li className='flex flex-row relative'>
-        <a
-          href=''
-          className='flex'
-          onMouseEnter={() => setTopicsMenu(true)}
-          //   onMouseLeave={() => setTopicsMenu(false)}
-        >
+      <li className='flex flex-row'>
+        <a href='#' className='flex' onClick={() => setTopicsMenu(!topicsMenu)}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -61,12 +56,25 @@ export default function TopicsNav() {
         </a>
       </li>
       {/* Nav Menu */}
-      <div className={`${topicsMenu ? 'lg:absolute bg-white pt-5' : 'hidden'}`}>
-        <ul>
-          <li>Link #1</li>
-          <li>Linke #2</li>
+      <div
+        className={`${
+          topicsMenu
+            ? 'lg:absolute origin-top mt-3 w-64 bg-white pt-5 z-50'
+            : 'hidden'
+        }`}
+      >
+        <ul className='flex flex-col px-3 divide-y'>
+          <a href='#'>
+            <li className='py-3'>Link #1</li>
+          </a>
+          <a href='#'>
+            <li className='py-3'>Link #2</li>
+          </a>
+          <a href='#'>
+            <li className='py-3'>Link #3</li>
+          </a>
         </ul>
       </div>
-    </>
+    </div>
   );
 }
