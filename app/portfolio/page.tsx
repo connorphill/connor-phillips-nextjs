@@ -1,11 +1,14 @@
+import SideNav from '@/components/Portfolio/SideNav';
 import Image from 'next/image';
 import React from 'react';
 
 export default function Portfolio() {
   return (
-    <div>
-      <div>Sidebar Nav</div>
-      <div className='container mx-auto'>
+    <div className='flex flex-row'>
+      <div className='basis-1/12'>
+        <SideNav />
+      </div>
+      <div className='basis-11/12 container'>
         <div className='py-5' id='start-here'>
           <h1 className='text-3xl lg:text-5xl'>Portfolio</h1>
           <p className='py-4'>
@@ -34,7 +37,7 @@ export default function Portfolio() {
                   src='/sunrise-2-5x7.jpeg'
                   width={200}
                   height={200}
-                  class='max-md:h-200 max-md:h-200 object-cover'
+                  className='max-md:h-200 max-md:h-200 object-cover'
                   alt='image'
                 />
               </div>
@@ -64,7 +67,13 @@ export default function Portfolio() {
           </div>
         </div>
         <div className='' id='projects'>
-          Projects
+          <h2 className='text-2xl lg:text-4xl'>Projects</h2>
+          <p className='py-4'>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga
+            voluptate veritatis ipsa unde blanditiis eos a qui ad aperiam.
+            Repudiandae ratione autem libero sint enim neque accusamus
+            accusantium inventore voluptates?
+          </p>
         </div>
       </div>
     </div>
