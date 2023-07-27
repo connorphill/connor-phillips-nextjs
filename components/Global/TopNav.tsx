@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ThemeSwitcher } from '../ThemeSwitcher';
 import TopicsNav from './TopicsNav';
+import Link from 'next/link';
 
 export default function TopNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -35,7 +36,9 @@ export default function TopNav() {
                 />
               </svg>
 
-              <p className='ml-2'>Portfolio</p>
+              <p className='ml-2'>
+                <Link href='/portfolio'>Portfolio</Link>
+              </p>
             </li>
             <li className='flex flex-row'>
               <svg
