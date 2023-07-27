@@ -59,7 +59,7 @@ export default function TopicsNav() {
       <div
         className={`${
           topicsMenu
-            ? 'lg:absolute origin-top mt-3 w-64 bg-white pt-5 z-50'
+            ? 'lg:absolute origin-top pt-2 w-64 bg-white pt-5 z-50'
             : 'hidden'
         }`}
       >

@@ -7,8 +7,8 @@ export default function TopNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
-    <nav className='bg-gray-100'>
-      <div className='container relative mx-auto flex items-center justify-between py-4 border border-blue-400'>
+    <nav className=''>
+      <div className='container relative mx-auto flex items-center justify-between py-4'>
         {/* Logo */}
         <div className='flex'>
           <h1 className='text-5xl'>
@@ -88,7 +88,7 @@ export default function TopNav() {
       <div
         className={`${
           mobileMenu
-            ? 'flex divide-y origin-top animate-open-mobile-menu transition'
+            ? 'flex lg:hidden divide-y origin-top animate-open-mobile-menu transition'
             : 'hidden'
         }`}
         id='mobile-menu'
