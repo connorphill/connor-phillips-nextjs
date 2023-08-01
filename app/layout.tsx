@@ -1,12 +1,14 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Lora, Montserrat } from 'next/font/google';
 import { ThemeProvider } from './theme-provider';
 import Footer from './footer';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import TopNav from '@/components/Global/TopNav';
 
 const inter = Inter({ subsets: ['latin'] });
+const lora = Lora({ subsets: ['latin'] });
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <main>
             <TopNav />
