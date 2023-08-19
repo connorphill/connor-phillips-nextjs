@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function About() {
+export default async function About() {
   return (
     <div className='container mx-auto px-10'>
       <div className='py-3' id='introduction'>
