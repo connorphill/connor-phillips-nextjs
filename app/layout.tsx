@@ -1,16 +1,22 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Lora, Spectral } from 'next/font/google';
+import { Inter, Lora, Spectral, Gelasio } from 'next/font/google';
 import { ThemeProvider } from './theme-provider';
 import Footer from './footer';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import TopNav from '@/components/Global/TopNav';
 
-const inter = Inter({ subsets: ['latin'] });
 const lora = Lora({ subsets: ['latin'] });
 const spectral = Spectral({
   weight: ['200', '300', '400', '500', '600', '700', '800'],
   subsets: ['latin'],
+});
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+
+const gelasio = Gelasio({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-gelasio',
 });
 
 export const metadata: Metadata = {
@@ -25,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={spectral.className}>
+      <body className={`${inter.variable} ${gelasio.variable}`}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <main>
             <TopNav />
