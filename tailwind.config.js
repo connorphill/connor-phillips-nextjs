@@ -21,7 +21,19 @@ module.exports = {
       animation: {
         'open-mobile-menu': 'open-menu 0.5s forwards',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              color: '#e7c91d',
+              '&:hover': {
+                color: '#695d17',
+              },
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
