@@ -14,3 +14,7 @@ h5,
 h6 {
   font-family: var(--font-gelasio);
 }
+
+#card-tag {
+  font-family: var(--font-gelasio);
+}

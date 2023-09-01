@@ -12,9 +12,9 @@ export default function TopNav() {
       <div className='container relative mx-auto flex items-center justify-between py-4'>
         {/* Logo */}
         <div className='flex'>
-          <h1 className='text-5xl'>
+          <h2 className='text-5xl font-bold'>
             <a href='/'>Connor Phillips</a>
-          </h1>
+          </h2>
         </div>
         {/* Primary Nav */}
         <div className='hidden lg:flex ml-20'>

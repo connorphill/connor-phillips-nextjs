@@ -1,16 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Lora, Spectral, Gelasio } from 'next/font/google';
+import { Inter, Gelasio } from 'next/font/google';
 import { ThemeProvider } from './theme-provider';
 import Footer from './footer';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import TopNav from '@/components/Global/TopNav';
 
-const lora = Lora({ subsets: ['latin'] });
-const spectral = Spectral({
-  weight: ['200', '300', '400', '500', '600', '700', '800'],
-  subsets: ['latin'],
-});
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 const gelasio = Gelasio({

@@ -1,18 +1,10 @@
 import Card from '@/components/Card';
-import SidebarInfo from '@/components/SidebarInfo';
+import SidebarInfo from '@/components/Feed/SidebarInfo';
+import Pagination from '@/components/Global/Pagination';
 import { getPosts } from '@/libs/ghost';
-
-const cardBoilerplate = () => {
-  let cardArr = [];
-  for (var i = 0; i < 3; i++) {
-    cardArr.push(<Card key={i} />);
-  }
-  return cardArr;
-};
 
 export default async function Home() {
   const getPost = await getPosts();
-  console.log(getPost);
   return (
     <div className='container mx-auto'>
       <div className='flex'>
@@ -32,6 +24,14 @@ export default async function Home() {
         <div className='flex-auto flex-col hidden md:flex md:basis-2/6 pt-2'>
           <SidebarInfo />
         </div>
+      </div>
+      <div className='flex justify-center'>
+        <Pagination
+          pageNum={getPost?.meta?.pagination.page}
+          pageTot={getPost?.meta?.pagination.pages}
+          nextPage={getPost?.meta?.pagination.next}
+          prevPage={getPost?.meta?.pagination.prev}
+        />
       </div>
     </div>
   );
