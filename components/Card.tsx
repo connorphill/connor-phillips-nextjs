@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface CardProps {
-  id: String;
+  key: String;
   title: String;
   custom_excerpt: String;
   primary_tag: String;

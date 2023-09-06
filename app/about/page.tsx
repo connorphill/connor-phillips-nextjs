@@ -18,7 +18,7 @@ export default async function About() {
       </div>
       <div className='py-3' id='skills'>
         <h2 className='text-5xl'>Skills</h2>
-        <div className='flex flex-col lg:flex-row mt-5 justify-around md:space-x-4'>
+        <div className='flex flex-col lg:flex-row mt-5 justify-around md:space-x-4 space-y-5 md:space-y-0'>
           <div className='flex flex-col py-2 px-3 bg-gray-100'>
             <h3 className='text-2xl flex items-center'>
               <svg

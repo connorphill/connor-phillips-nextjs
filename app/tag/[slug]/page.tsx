@@ -12,7 +12,7 @@ export default async function Tag({ params }: { params: { slug: string } }) {
     <div className='container mx-auto'>
       <div className='flex flex-col py-5 md:py-10'>
         <div className='flex flex-col pb-10' id='content-header'>
-          <h1 className='lg:text-6xl text-gold-500'>{tags?.name}</h1>
+          <h1 className='text-4xl lg:text-6xl text-gold-500'>{tags?.name}</h1>
         </div>
         <div id='content-body'>
           <ul>

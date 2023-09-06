@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
+import TopicsLinks from './TopicsLinks';
 
 export default function TopicsNav() {
   const [topicsMenu, setTopicsMenu] = useState(false);
@@ -63,17 +65,7 @@ export default function TopicsNav() {
             : 'hidden'
         }`}
       >
-        <ul className='flex flex-col px-3 divide-y'>
-          <a href='#'>
-            <li className='py-3'>Link #1</li>
-          </a>
-          <a href='#'>
-            <li className='py-3'>Link #2</li>
-          </a>
-          <a href='#'>
-            <li className='py-3'>Link #3</li>
-          </a>
-        </ul>
+        <TopicsLinks />
       </div>
     </div>
   );

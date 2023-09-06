@@ -4,6 +4,17 @@ import SidebarInfo from '@/components/Feed/SidebarInfo';
 import Pagination from '@/components/Global/Pagination';
 import { getPostsByPage } from '@/libs/ghost';
 
+interface PostJSONProps {
+  id: String;
+  title: String;
+  custom_excerpt: String;
+  primary_tag: {
+    name: String;
+  };
+  slug: String;
+  feature_image: String;
+}
+
 export default async function PagePosts({
   params,
 }: {
@@ -26,7 +37,7 @@ export default async function PagePosts({
     <div className='container mx-auto'>
       <div className='flex'>
         <div className='flex-auto flex-col basis-4/6 py-2 divide-y'>
-          {getPost.map((item: JSON) => {
+          {getPost.map((item: PostJSONProps) => {
             if (
               item?.feature_image &&
               item?.feature_image.slice(0, 2) == '//'
@@ -35,12 +46,12 @@ export default async function PagePosts({
             }
             return (
               <Card
-                // id={item.id}
-                title={item.title}
-                custom_excerpt={item.custom_excerpt}
-                primary_tag={item.primary_tag.name}
-                slug={item.slug}
-                image={item.feature_image}
+                key={item?.id}
+                title={item?.title}
+                custom_excerpt={item?.custom_excerpt}
+                primary_tag={item?.primary_tag.name}
+                slug={item?.slug}
+                image={item?.feature_image}
               />
             );
           })}

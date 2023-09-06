@@ -35,7 +35,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
               {posts?.dateFormatted} <span class='bull px-3'>&bull;</span>{' '}
               Reading Time: {posts?.reading_time} Minutes
             </h3>
-            <h2 className='pt-3 italic text-md md:text-xl' id='content-footer'>
+            <h2 className='py-3 italic text-md md:text-xl' id='content-footer'>
               {posts?.excerpt}
             </h2>
           </div>
