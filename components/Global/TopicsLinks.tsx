@@ -22,6 +22,9 @@ export default function TopicsLinks() {
       <li className='block p-4'>
         <Link href='/tag/programming'>Programming</Link>
       </li>
+      <li className='block p-4'>
+        <Link href='/tags'>All Topics</Link>
+      </li>
     </ul>
   );
 }

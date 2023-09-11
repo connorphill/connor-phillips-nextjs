@@ -14,10 +14,6 @@ export default function Pagination({
   nextPage,
   prevPage,
 }: PaginationProps) {
-  //   console.log(pageNum);
-  //   console.log(pageTot);
-  //   console.log(prevPage);
-  //   console.log(nextPage);
   return (
     <div className='flex flex-row space-x-10 py-10'>
       {prevPage && prevPage === 1 ? (

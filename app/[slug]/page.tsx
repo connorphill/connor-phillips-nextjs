@@ -50,7 +50,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </div>
         </div>
         <div
-          className='prose dark:prose-invert lg:px-44 pt-10 max-w-none prose-p:text-lg prose-blockquote:text-lg'
+          className='prose dark:prose-invert lg:px-44 pt-10 max-w-none prose-p:text-lg prose-blockquote:text-lg tracking-wide leading-7'
           id='content-body'
           dangerouslySetInnerHTML={{ __html: posts?.html }}
         ></div>

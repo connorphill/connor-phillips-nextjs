@@ -34,9 +34,15 @@ export default function SidebarInfo() {
         </p>
         <p className='font-light pt-2'>
           Currently, I lead the US Analytics team at the growth marketing
-          agency, <a href='https://www.twigeo.com/'>Twigeo</a>, working with
-          growth-focused clients ranging in industries from ride share to
-          language learning.
+          agency,{' '}
+          <a
+            href='https://www.twigeo.com/'
+            className='text-gold-500 hover:text-gold-700'
+          >
+            Twigeo
+          </a>
+          , working with growth-focused clients ranging in industries from ride
+          share to language learning.
         </p>
       </div>
     </div>

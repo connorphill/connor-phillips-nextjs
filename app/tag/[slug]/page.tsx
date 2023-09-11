@@ -8,6 +8,7 @@ export default async function Tag({ params }: { params: { slug: string } }) {
   if (tags) {
     posts = await getPostsFromTag(tags.slug);
   }
+  // console.log(posts);
   return (
     <div className='container mx-auto'>
       <div className='flex flex-col py-5 md:py-10'>
@@ -26,11 +27,13 @@ export default async function Tag({ params }: { params: { slug: string } }) {
               ) {
                 console.log('No Image Found');
                 imagePath = '';
-              } else {
+              } else if (item.feature_image.includes('s3')) {
                 imagePath =
                   'https:/s3.amazonaws.com' +
                   item.feature_image?.split('//s3.amazonaws.com')[1];
                 console.log(imagePath);
+              } else {
+                imagePath = item.feature_image;
               }
               return (
                 <Card

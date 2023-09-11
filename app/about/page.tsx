@@ -5,21 +5,69 @@ export default async function About() {
     <div className='container mx-auto px-10'>
       <div className='py-3' id='introduction'>
         <h1 className='text-5xl'>About</h1>
-        <p className='py-3'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ad
-          illo quis adipisci sint vero ratione animi facere explicabo unde
-          debitis commodi reprehenderit, molestias cum eligendi rem sapiente
-          consequatur tenetur. Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Eveniet, reprehenderit dolor aspernatur perspiciatis
-          exercitationem porro ea inventore sunt, temporibus, non nulla?
-          Tempore, deleniti aspernatur voluptatibus itaque possimus aliquid enim
-          officiis?
-        </p>
+        <div className='py-3 text-lg'>
+          <p className='py-2'>
+            Marketing Analytics leader with a decade of startup and agency
+            experience helping B2C and B2B businesses with their mobile app and
+            web-based products.
+          </p>
+          <p className='py-2'>
+            I have led a wide range of marketing analytics initiatives including
+            measurement, strategy, data architecture, and forecasting for both
+            mobile and web-based products.
+          </p>
+          <p className='py-2'>
+            Currently, I lead the US Analytics team at the growth marketing
+            agency,
+            <a href='https://twigeo.com/'>Twigeo</a>, working with
+            growth-focused clients ranging in industries from ride share to
+            language learning.
+          </p>
+          <p className='py-2'>
+            Prior to Twigeo, I helped establish and lead marketing and sales
+            analytics at ShopKeep, which was acquired by
+            <a href='https://www.lightspeedhq.com/'>Lightspeed Commerce</a>
+            (NYSE: LSPD) in 2020.
+          </p>
+          <p className='py-2'>
+            Outside of my passion for all things data, I am an avid runner,
+            photographer and love working on side projects to learn new software
+            development languages.
+          </p>
+          <div className='border-solid border-2 p-2 border-gold-600'>
+            <h2 className='text-3xl pt-3 text-gold-600'>Highlights</h2>
+            <ul className='py-5 px-4 list-disc space-y-3'>
+              <li>
+                Helped establish and lead Marketing &amp; Sales Analytics for
+                ShopKeep to its EBITDA positive year in the decade of the
+                business being in operation
+              </li>
+              <li>
+                Designed and executed various tests (GeoX, Conversion Lift,
+                etc.) to prove the incrementality of marketing campaigns.
+              </li>
+              <li>
+                Developed analytics solutions like a proprietary lead scoring
+                algorithm and multi-touch attribution model using platforms
+                including Postgresql, Looker, Google Tag Manager, and
+                Salesforce.
+              </li>
+              <li>
+                Developed ML models for purposes like time series forecasting
+                and customer segmentation
+              </li>
+              <li>
+                Programmed an internal data annotation tracking solution to
+                track and understand trends in reports
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div className='py-3' id='skills'>
         <h2 className='text-5xl'>Skills</h2>
         <div className='flex flex-col lg:flex-row mt-5 justify-around md:space-x-4 space-y-5 md:space-y-0'>
-          <div className='flex flex-col py-2 px-3 bg-gray-100'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-600'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 width='512'
@@ -227,7 +275,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 bg-gray-100'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-600'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -344,7 +392,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 bg-gray-100'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-600'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 width='512'
@@ -444,7 +492,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 bg-gray-100'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-600'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -529,7 +577,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 bg-gray-100'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-600'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'

@@ -56,12 +56,23 @@ export async function getSingleTag(tagSlug: String) {
     });
 }
 
-// GET posts by tag slug
+// GET all posts by tag slug
 export async function getPostsFromTag(tagSlug: String) {
   return await api.posts
     .browse({
       filter: `tag:${tagSlug}`,
       limit: '10',
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+// GET all tags
+export async function getTags() {
+  return await api.tags
+    .browse({
+      limit: 'all',
     })
     .catch((err) => {
       console.error(err);
