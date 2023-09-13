@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-const NotFound = () => {
+const Error = () => {
   return (
     <div className='min-h-screen flex items-center justify-center'>
       <div className='text-center'>
@@ -19,4 +19,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default Error;

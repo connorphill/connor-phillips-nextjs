@@ -1,14 +1,10 @@
-import SideNav from '@/components/Portfolio/SideNav';
 import Image from 'next/image';
 import React from 'react';
 
 export default function Portfolio() {
   return (
-    <div className='flex flex-row'>
-      <div className='basis-1/12'>
-        <SideNav />
-      </div>
-      <div className='basis-11/12 container'>
+    <div className='container mx-auto'>
+    <div className='flex flex-col'>
         <div className='py-5' id='start-here'>
           <h1 className='text-3xl lg:text-5xl'>Portfolio</h1>
           <p className='py-4'>
@@ -19,7 +15,7 @@ export default function Portfolio() {
           </p>
         </div>
         {/* Businesses Section */}
-        <div className='' id='businesses'>
+        <div className='flex flex-col' id='businesses'>
           <h2 className='text-2xl lg:text-4xl'>Businesses</h2>
           <p className='py-4'>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga
@@ -76,6 +72,6 @@ export default function Portfolio() {
           </p>
         </div>
       </div>
-    </div>
+      </div>
   );
 }

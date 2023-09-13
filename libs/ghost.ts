@@ -19,6 +19,28 @@ export async function getPosts() {
     });
 }
 
+// GET all posts for sitemap
+export async function getPostsSitemap() {
+  return await api.posts
+    .browse({
+      limit: 'all',
+      fields: 'url,updated_at'
+    })
+    .then((posts)=> {
+      // console.log(posts)
+      var arr = []
+      posts.forEach((post)=>{
+        // console.log(post.url)
+        // console.log(post.updated_at)
+        arr.push({ url: post.url, date: post.updated_at})
+      })
+      return arr;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
 // GET posts by page
 export async function getPostsByPage(pageNum: number) {
   console.log(`This is the getPostsByPage: ${pageNum}`);
@@ -73,6 +95,55 @@ export async function getTags() {
   return await api.tags
     .browse({
       limit: 'all',
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+// GET all tags for sitemap xml
+export async function getTagsSitemap() {
+  return await api.tags
+    .browse({
+      limit: 'all',
+      fields: 'url'
+    })
+    .then((tags)=> {
+      var arr = []
+      tags.forEach((tag)=>{
+        arr.push({ url: tag.url })
+      })
+      return arr;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+// GET all pages
+export async function getPages() {
+  return await api.pages
+    .browse({
+      limit: 'all',
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+// GET all pages for sitemap xml
+export async function getPagesSitemap() {
+  return await api.pages
+    .browse({
+      limit: 'all',
+      fields: 'url'
+    })
+    .then((pages)=> {
+      var arr = []
+      pages.forEach((page)=>{
+        arr.push({ url: page.url })
+      })
+      return arr;
     })
     .catch((err) => {
       console.error(err);
