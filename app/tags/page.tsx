@@ -30,9 +30,9 @@ export default async function Tags() {
 
   return (
     <div className='container mx-auto'>
-      <div className='flex flex-col py-5 md:py-10'>
-        <div className='flex flex-col pb-10' id='content-header'>
-          <h1 className='text-4xl lg:text-6xl text-gold-500'>Topics</h1>
+      <div className='flex flex-col py-5'>
+        <div className='flex flex-col py-10' id='content-header'>
+          <h1 className='text-4xl lg:text-5xl font-semibold text-gold-500'>Topics</h1>
         </div>
         <div id='content-body'>
           <ul>

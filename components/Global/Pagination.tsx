@@ -24,7 +24,7 @@ export default function Pagination({
       <p>
         Page {pageNum.toString()} of {pageTot.toString()}
       </p>
-      {nextPage ? <Link href={nextPage.toString()}>Next Page</Link> : null}
+      {nextPage ? <Link href={`/page/${nextPage.toString()}`}>Next Page</Link> : null}
     </div>
   );
 }

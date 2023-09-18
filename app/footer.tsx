@@ -9,6 +9,7 @@ export default function Footer() {
           <li>Connor Phillips</li>
           <li>
             <Link href='/about'>About</Link>
+            <Link href='/portfolio'>Portfolio</Link>
           </li>
         </ul>
       </div>

@@ -2,9 +2,9 @@ import React from 'react';
 
 export default async function About() {
   return (
-    <div className='container mx-auto px-10'>
-      <div className='py-3' id='introduction'>
-        <h1 className='text-5xl'>About</h1>
+    <div className='container mx-auto'>
+      <div className='py-10' id='introduction'>
+        <h1 className='text-5xl font-semibold text-gold-600'>About</h1>
         <div className='py-3 text-lg'>
           <p className='py-2'>
             Marketing Analytics leader with a decade of startup and agency
@@ -34,8 +34,8 @@ export default async function About() {
             photographer and love working on side projects to learn new software
             development languages.
           </p>
-          <div className='border-solid border-2 p-2 border-gold-600'>
-            <h2 className='text-3xl pt-3 text-gold-600'>Highlights</h2>
+          <div className='border-solid border-2 p-2 mt-5 border-gold-500'>
+            <h2 className='text-3xl pt-3 text-gold-500'>Highlights</h2>
             <ul className='py-5 px-4 list-disc space-y-3'>
               <li>
                 Helped establish and lead Marketing &amp; Sales Analytics for
@@ -65,9 +65,9 @@ export default async function About() {
         </div>
       </div>
       <div className='py-3' id='skills'>
-        <h2 className='text-5xl'>Skills</h2>
+        <h2 className='text-5xl text-gold-500'>Skills</h2>
         <div className='flex flex-col lg:flex-row mt-5 justify-around md:space-x-4 space-y-5 md:space-y-0'>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-600'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-500'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 width='512'
@@ -275,7 +275,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-600'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-500'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -392,7 +392,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-600'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-500'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 width='512'
@@ -492,7 +492,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-600'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-500'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -577,7 +577,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-600'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-500'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'

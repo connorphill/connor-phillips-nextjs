@@ -12,11 +12,12 @@ type Props = {
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = await getSinglePost(params.slug);
-  if (!post)
-    return {
+  if (!post){    return {
       title: "Not Found",
       description: "The page is not found",
     };
+    }
+
 
   return {
     title: post?.title,
@@ -80,7 +81,7 @@ async function Post({ params }: { params: { slug: string } }) {
               {post?.dateFormatted} <span class='bull px-3'>&bull;</span>{' '}
               Reading Time: {post?.reading_time} Minutes
             </h3>
-            <h2 className='py-3 italic text-md md:text-xl' id='content-footer'>
+            <h2 className='py-3 italic text-md md:text-xl border-2 border-gold-500 p-2 mb-3' id='content-footer'>
               {post?.excerpt}
             </h2>
           </div>

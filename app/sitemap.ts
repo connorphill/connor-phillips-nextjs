@@ -1,21 +1,30 @@
 import { getPostsSitemap, getTagsSitemap, getPagesSitemap } from '@/libs/ghost'
-// import { MetadataRoute } from 'next'
+
+type Res = {
+  url: string,
+  date: string
+};
  
 export default async function sitemap() {
 
     const URL = 'https://www.connorphillips.com'
 
-    const posts = await getPostsSitemap().then((res) => {
-        const postsXml = res.map(({url, date}) => ({
-            url: url,
-            lastModified: date
-        }))
-        console.log(postsXml)
-        return postsXml;
-    })
+    const posts = await getPostsSitemap()
+  .then((res) => {
+    const postsXml = res.map(({ url, date }: Res) => ({
+      url: url,
+      lastModified: date,
+    }));
+    console.log(postsXml);
+    return postsXml;
+  })
+  .catch((error) => {
+    console.error('Error fetching posts:', error);
+    return []; // Return an empty array or handle the error accordingly
+  });
     
     const tags = await getTagsSitemap().then((res) => {
-        const tagsXml = res.map(({url}) => ({
+        const tagsXml = res.map(({url}: Res) => ({
             url: url,
             lastModified: new Date().toISOString()
         }))
@@ -24,7 +33,7 @@ export default async function sitemap() {
     })
 
     const pages = await getPagesSitemap().then((res) => {
-        const pagesXml = res.map(({url}) => ({
+        const pagesXml = res.map(({url}: Res) => ({
             url: url,
             lastModified: new Date().toISOString()
         }))
