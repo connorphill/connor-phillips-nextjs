@@ -1,7 +1,7 @@
 import GhostContentAPI from '@tryghost/content-api';
 
 // Create API instance with site credentials
-const api = new GhostContentAPI({
+const api: any = new GhostContentAPI({
   url: process.env.GHOST_CONTENT_URL as string,
   key: process.env.GHOST_CONTENT_API as string,
   version: 'v5.0',
@@ -14,7 +14,7 @@ export async function getPosts() {
       include: 'tags',
       limit: '10',
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 }
@@ -26,31 +26,27 @@ export async function getPostsSitemap() {
       limit: 'all',
       fields: 'url,updated_at'
     })
-    .then((posts)=> {
-      // console.log(posts)
+    .then((posts: any)=> {
       var arr: any = []
-      posts.forEach((post)=>{
-        // console.log(post.url)
-        // console.log(post.updated_at)
+      posts.forEach((post: any)=>{
         arr.push({ url: post.url, date: post.updated_at})
       })
       return arr;
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 }
 
 // GET posts by page
-export async function getPostsByPage(pageNum: number) {
-  console.log(`This is the getPostsByPage: ${pageNum}`);
+export async function getPostsByPage(pageNum: number) {;
   return await api.posts
     .browse({
       include: 'tags',
       limit: 10,
       page: pageNum,
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 }
@@ -62,7 +58,7 @@ export async function getSinglePost(postSlug: String) {
       slug: postSlug as string,
       include: 'tags' as string,
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 }
@@ -73,7 +69,7 @@ export async function getSingleTag(tagSlug: String) {
       slug: tagSlug as string,
       include: 'posts' as string,
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 }
@@ -85,7 +81,7 @@ export async function getPostsFromTag(tagSlug: String) {
       filter: `tag:${tagSlug}`,
       limit: 'all',
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 }
@@ -96,7 +92,7 @@ export async function getTags() {
     .browse({
       limit: 'all',
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 }
@@ -108,14 +104,14 @@ export async function getTagsSitemap() {
       limit: 'all',
       fields: 'url'
     })
-    .then((tags)=> {
+    .then((tags: any)=> {
       var arr: any = []
-      tags.forEach((tag)=>{
+      tags.forEach((tag: any)=>{
         arr.push({ url: tag.url })
       })
       return arr;
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 }
@@ -126,7 +122,7 @@ export async function getPages() {
     .browse({
       limit: 'all',
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 }
@@ -138,14 +134,14 @@ export async function getPagesSitemap() {
       limit: 'all',
       fields: 'url'
     })
-    .then((pages)=> {
+    .then((pages: any)=> {
       var arr: any = []
-      pages.forEach((page)=>{
+      pages.forEach((page: any)=>{
         arr.push({ url: page.url })
       })
       return arr;
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.error(err);
     });
 }
