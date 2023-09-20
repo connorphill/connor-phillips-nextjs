@@ -13,12 +13,12 @@ interface TagsProps {
 }
 
 export default async function Tags() {
-  const tags = await getTags();
+  const tags: any = await getTags();
 
   const tagsByFirstCharacter: { [key: string]: Tag[] } = {};
 
   // Group tags by the first character of tag.name
-  tags.forEach((tag) => {
+  tags.forEach((tag: any) => {
     const firstChar = tag?.name[0].toUpperCase(); // Ensure it's uppercase
     if (!tagsByFirstCharacter[firstChar]) {
       tagsByFirstCharacter[firstChar] = [];

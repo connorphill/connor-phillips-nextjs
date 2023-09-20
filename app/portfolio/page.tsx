@@ -53,7 +53,7 @@ export default function Portfolio() {
                 <p className='pt-3'><i>Development: 2017 - 2018 <br /> Production: 2019</i></p>
               </div>
               <div className='pt-5'>
-                <p>A weekend project to transport you to the late 90's/early 00's, when you would boot up the computer, hear an ear piercing modem noise, and knew that you were going to find something new, interesting, or download something illegal.</p>
+                <p>A weekend project to transport you to the late 90&quot;s/early 00&quot;s, when you would boot up the computer, hear an ear piercing modem noise, and knew that you were going to find something new, interesting, or download something illegal.</p>
               </div>
             </div>
             <div className='basis-1/2'>
@@ -71,9 +71,7 @@ export default function Portfolio() {
                 />
               </div>
               <div className='pt-5'>
-                <p>A free Fitbit storytelling tool that turns your sleep patterns into a story that you can understand. Utilizing the Fitbit API, Node.js, D3.js and serverless technology I created a website that would tell a story about your sleep patterns.
-
-</p>
+                <p>A free Fitbit storytelling tool that turns your sleep patterns into a story that you can understand. Utilizing the Fitbit API, Node.js, D3.js and serverless technology I created a website that would tell a story about your sleep patterns.</p>
               </div>
             </div>
           </div>

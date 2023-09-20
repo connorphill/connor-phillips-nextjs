@@ -28,7 +28,7 @@ export async function getPostsSitemap() {
     })
     .then((posts)=> {
       // console.log(posts)
-      var arr = []
+      var arr: any = []
       posts.forEach((post)=>{
         // console.log(post.url)
         // console.log(post.updated_at)
@@ -109,7 +109,7 @@ export async function getTagsSitemap() {
       fields: 'url'
     })
     .then((tags)=> {
-      var arr = []
+      var arr: any = []
       tags.forEach((tag)=>{
         arr.push({ url: tag.url })
       })
@@ -139,7 +139,7 @@ export async function getPagesSitemap() {
       fields: 'url'
     })
     .then((pages)=> {
-      var arr = []
+      var arr: any = []
       pages.forEach((page)=>{
         arr.push({ url: page.url })
       })

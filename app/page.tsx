@@ -3,13 +3,18 @@ import SidebarInfo from '@/components/Feed/SidebarInfo';
 import Pagination from '@/components/Global/Pagination';
 import { getPosts } from '@/libs/ghost';
 
+
 export default async function Home() {
-  const getPost = await getPosts();
+  const getPost: any = await getPosts();
+  console.log('getPost() type:')
+  console.log(typeof(getPost))
+  console.log(getPost[0])
+
   return (
     <div className='container mx-auto'>
       <div className='flex'>
         <div className='flex-auto flex-col basis-4/6 py-2 divide-y'>
-          {getPost.map((item) => {
+          {getPost.map((item: any) => {
             return (
               <Card
                 title={item.title}

@@ -10,7 +10,7 @@ export default async function sitemap() {
     const URL = 'https://www.connorphillips.com'
 
     const posts = await getPostsSitemap()
-  .then((res) => {
+  .then((res: any) => {
     const postsXml = res.map(({ url, date }: Res) => ({
       url: url,
       lastModified: date,
@@ -23,7 +23,7 @@ export default async function sitemap() {
     return []; // Return an empty array or handle the error accordingly
   });
     
-    const tags = await getTagsSitemap().then((res) => {
+    const tags = await getTagsSitemap().then((res: any) => {
         const tagsXml = res.map(({url}: Res) => ({
             url: url,
             lastModified: new Date().toISOString()
@@ -32,7 +32,7 @@ export default async function sitemap() {
         return tagsXml;
     })
 
-    const pages = await getPagesSitemap().then((res) => {
+    const pages = await getPagesSitemap().then((res: any) => {
         const pagesXml = res.map(({url}: Res) => ({
             url: url,
             lastModified: new Date().toISOString()

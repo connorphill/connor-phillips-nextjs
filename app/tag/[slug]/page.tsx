@@ -3,11 +3,10 @@ import { getSingleTag, getPostsFromTag } from '@/libs/ghost';
 import Card from '@/components/Card';
 
 export default async function Tag({ params }: { params: { slug: string } }) {
-  var posts = [];
+  var posts: any = [];
   const tags = await getSingleTag(params.slug);
   if (tags) {
     posts = await getPostsFromTag(tags.slug);
-    console.log(posts)
   }
 
   // console.log(posts);
@@ -19,9 +18,9 @@ export default async function Tag({ params }: { params: { slug: string } }) {
         </div>
         <div id='content-body'>
           <ul>
-            {posts.map((item) => {
-              console.log(`Page: ${item.slug}`);
-              console.log(`Image: ${item.feature_image}`);
+            {posts.map((item: any) => {
+              // console.log(`Page: ${item.slug}`);
+              // console.log(`Image: ${item.feature_image}`);
               
               var imagePath;
               var excerpt;
@@ -31,8 +30,6 @@ export default async function Tag({ params }: { params: { slug: string } }) {
               } else {
                 excerpt = item.custom_excerpt;
               }
-
-              console.log(`Excerpt: ${excerpt}`)
 
               if (
                 !item.hasOwnProperty('feature_image') ||

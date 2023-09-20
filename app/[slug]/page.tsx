@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 async function Post({ params }: { params: { slug: string } }) {
   console.log(params.slug);
-  const post = await getSinglePost(params.slug);
+  const post: any = await getSinglePost(params.slug);
 
     const metadata = {
     title: `${post?.title} | Connor Phillips`,
@@ -57,7 +57,7 @@ async function Post({ params }: { params: { slug: string } }) {
     }
 
   if (post) {
-    const options = {
+    const options: any = {
       month: '2-digit',
       day: '2-digit',
       year: 'numeric',
@@ -81,7 +81,7 @@ async function Post({ params }: { params: { slug: string } }) {
           <div id='header-title'>
             <h1 className='text-3xl md:text-5xl'>{post?.title}</h1>
             <h3 className='py-6 font-bold'>
-              {post?.dateFormatted} <span class='bull px-3'>&bull;</span>{' '}
+              {post?.dateFormatted} <span className='bull px-3'>&bull;</span>{' '}
               Reading Time: {post?.reading_time} Minutes
             </h3>
             <h2 className='py-3 italic text-md md:text-xl border-2 border-gold-500 p-2 mb-3' id='content-footer'>
