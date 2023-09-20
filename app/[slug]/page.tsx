@@ -18,6 +18,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
     }
 
+    var metaImage = '';
+    if (post?.feature_image){
+        metaImage = post?.feature_image;
+    }
 
   return {
     title: post?.title,
@@ -28,18 +32,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
         url: post?.url,
         siteName: 'Connor Phillips',
-        // images: [{post?.feature_image}],
+        images: [metaImage],
         title: post?.title,
         description: post?.excerpt,
         locale: 'en_US',
-        type: 'website',
-        images: [post?.feature_image]
+        type: 'website'
     },
     twitter: {
         card: 'summary_large_image',
         title: post?.title,
         description: post?.excerpt,
-        images: [post?.feature_image]
+        images: [metaImage]
     }
   };
 }
@@ -85,6 +88,7 @@ async function Post({ params }: { params: { slug: string } }) {
               {post?.excerpt}
             </h2>
           </div>
+          {post?.feature_image ?
           <div className='md:mx-auto overflow-hidden  md:h-full relative md:order-last'>
             <Image
               src={post?.feature_image}
@@ -94,6 +98,7 @@ async function Post({ params }: { params: { slug: string } }) {
               alt='Test'
             />
           </div>
+          : null}
         </div>
         <div
           className='prose dark:prose-invert lg:px-44 pt-10 max-w-none prose-p:text-lg prose-blockquote:text-lg tracking-wide leading-7'

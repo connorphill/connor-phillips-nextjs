@@ -9,7 +9,7 @@ export default async function Home() {
     <div className='container mx-auto'>
       <div className='flex'>
         <div className='flex-auto flex-col basis-4/6 py-2 divide-y'>
-          {getPost.map((item: JSON) => {
+          {getPost.map((item) => {
             return (
               <Card
                 title={item.title}
@@ -17,6 +17,7 @@ export default async function Home() {
                 primary_tag={item.primary_tag.name}
                 slug={item.slug}
                 image={item.feature_image}
+                key={''}
               />
             );
           })}

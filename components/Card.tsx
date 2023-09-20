@@ -3,12 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface CardProps {
-  key: String;
-  title: String;
-  custom_excerpt: String;
-  primary_tag: String;
-  slug: String;
-  image: String;
+  key: string;
+  title: string;
+  custom_excerpt: string;
+  primary_tag: string;
+  slug: string;
+  image: string;
 }
 
 export default function Card({

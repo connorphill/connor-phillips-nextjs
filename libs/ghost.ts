@@ -83,7 +83,7 @@ export async function getPostsFromTag(tagSlug: String) {
   return await api.posts
     .browse({
       filter: `tag:${tagSlug}`,
-      limit: '10',
+      limit: 'all',
     })
     .catch((err) => {
       console.error(err);

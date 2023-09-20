@@ -7,7 +7,9 @@ export default async function Tag({ params }: { params: { slug: string } }) {
   const tags = await getSingleTag(params.slug);
   if (tags) {
     posts = await getPostsFromTag(tags.slug);
+    console.log(posts)
   }
+
   // console.log(posts);
   return (
     <div className='container mx-auto'>
@@ -20,7 +22,18 @@ export default async function Tag({ params }: { params: { slug: string } }) {
             {posts.map((item) => {
               console.log(`Page: ${item.slug}`);
               console.log(`Image: ${item.feature_image}`);
+              
               var imagePath;
+              var excerpt;
+
+              if(!item.custom_excerpt){
+                excerpt = `${item.excerpt}..`;
+              } else {
+                excerpt = item.custom_excerpt;
+              }
+
+              console.log(`Excerpt: ${excerpt}`)
+
               if (
                 !item.hasOwnProperty('feature_image') ||
                 item.feature_image === null
@@ -38,11 +51,12 @@ export default async function Tag({ params }: { params: { slug: string } }) {
               return (
                 <Card
                   title={item.title}
-                  custom_excerpt={item.custom_excerpt}
+                  custom_excerpt={excerpt}
                   primary_tag=''
                   slug={item.slug}
-                  image={imagePath}
-                />
+                  image={imagePath} 
+                  key={''}                
+                  />
               );
             })}
           </ul>
