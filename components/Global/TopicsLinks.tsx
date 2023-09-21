@@ -1,29 +1,33 @@
 import Link from 'next/link';
 import React from 'react';
 
-export default function TopicsLinks() {
+interface LinkProps {
+  setTopicsMenu: () => void;
+}
+
+export default function TopicsLinks({ setTopicsMenu }: LinkProps) {
   return (
     <ul className='flex flex-col px-3 divide-y'>
       <li className='block p-4'>
-        <Link href='/tag/data'>Data</Link>
+        <Link href='/tag/data' onClick={() => { setTopicsMenu(); }}>Data</Link>
       </li>
       <li className='block p-4'>
-        <Link href='/tag/business'>Business</Link>
+        <Link href='/tag/business' onClick={() => { setTopicsMenu(); }}>Business</Link>
       </li>
       <li className='block p-4'>
-        <Link href='/tag/technology'>Technology</Link>
+        <Link href='/tag/technology' onClick={() => { setTopicsMenu(); }}>Technology</Link>
       </li>
       <li className='block p-4'>
-        <Link href='/tag/marketing'>Marketing</Link>
+        <Link href='/tag/marketing' onClick={() => { setTopicsMenu(); }}>Marketing</Link>
       </li>
       <li className='block p-4'>
-        <Link href='/tag/thoughts'>Thoughts</Link>
+        <Link href='/tag/thoughts' onClick={() => { setTopicsMenu(); }}>Thoughts</Link>
       </li>
       <li className='block p-4'>
-        <Link href='/tag/programming'>Programming</Link>
+        <Link href='/tag/programming' onClick={() => { setTopicsMenu(); }}>Programming</Link>
       </li>
       <li className='block p-4'>
-        <Link href='/tags'>All Topics</Link>
+        <Link href='/tags' onClick={() => { setTopicsMenu(); }}>All Topics</Link>
       </li>
     </ul>
   );

@@ -55,9 +55,6 @@ export default function Card({
             </Link>
           </h2>
           <p className='pb-2 font-light'>{custom_excerpt}</p>
-          <button className='bg-midnight-200 hover:bg-midnight-500 hover:text-white p-2'>
-            Read More
-          </button>
         </div>
       </div>
     </div>

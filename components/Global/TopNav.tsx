@@ -4,6 +4,7 @@ import { ThemeSwitcher } from '../ThemeSwitcher';
 import TopicsNav from './TopicsNav';
 import Link from 'next/link';
 import TopNavLinks from './TopNavLinks';
+import SocialLinks from './SocialLinks';
 
 export default function TopNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -12,7 +13,7 @@ export default function TopNav() {
     <nav className=''>
       <div className='container relative mx-auto flex items-center justify-between py-4'>
         {/* Logo */}
-        <div className='flex'>
+        <div className='flex flex-col md:flex-row'>
           <h2 className='text-5xl font-bold'>
             <a href='/'>Connor Phillips</a>
           </h2>
@@ -21,10 +22,14 @@ export default function TopNav() {
         <div className='hidden lg:flex ml-20'>
           <TopNavLinks />
         </div>
-        {/* Theme Switcher */}
-        <div className='hidden lg:flex justify-end'>
-          <ThemeSwitcher />
+        {/* Primary Nav */}
+        <div className='hidden lg:flex ml-20'>
+          <SocialLinks />
         </div>
+        {/* Theme Switcher */}
+        {/* <div className='hidden lg:flex justify-end'>
+          <ThemeSwitcher />
+        </div> */}
         {/* Mobile Button */}
         <div className='lg:hidden flex items-center'>
           <button
@@ -53,12 +58,15 @@ export default function TopNav() {
       <div
         className={`${
           mobileMenu
-            ? 'container flex lg:hidden divide-y origin-top animate-open-mobile-menu transition'
+            ? 'container flex flex-col mx-auto lg:hidden origin-top animate-open-mobile-menu transition'
             : 'hidden'
         }`}
         id='mobile-menu'
       >
+        <div className='flex flex-row'>
         <TopNavLinks />
+        </div>
+        <SocialLinks />
       </div>
     </nav>
   );

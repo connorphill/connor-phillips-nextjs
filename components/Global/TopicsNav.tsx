@@ -1,11 +1,44 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { MutableRefObject, RefObject, useState, useEffect } from 'react';
 import TopicsLinks from './TopicsLinks';
 
 export default function TopicsNav() {
   const [topicsMenu, setTopicsMenu] = useState(false);
+
+  const ref = React.useRef() as MutableRefObject<HTMLInputElement>;
+
+  // Detect outside component click
+  const useOutsideClick = (
+    ref: RefObject<HTMLElement>,
+    callback: () => void
+  ) => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const handleClick = (e: MouseEvent) => {
+      console.log(e)
+      console.log(ref)
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        console.log('CLICKS')
+        callback();
+      }
+    };
+    useEffect(() => {
+      document.addEventListener('click', handleClick);
+
+      return () => {
+        document.removeEventListener('click', handleClick);
+      };
+    }, [handleClick]);
+  };
+
+  useOutsideClick(ref, () => {
+    if (topicsMenu) {
+      setTopicsMenu(false);
+    }
+  });
+
+
   return (
-    <div className='relative'>
+    <div className='relative' ref={ref}>
       {/* Nav Link */}
       <li className='flex flex-row'>
         <a href='#' className='flex' onClick={() => setTopicsMenu(!topicsMenu)}>
@@ -65,7 +98,7 @@ export default function TopicsNav() {
             : 'hidden'
         }`}
       >
-        <TopicsLinks />
+        <TopicsLinks setTopicsMenu={setTopicsMenu} />
       </div>
     </div>
   );

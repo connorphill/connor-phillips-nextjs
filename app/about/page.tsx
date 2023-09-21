@@ -4,10 +4,10 @@ export default async function About() {
   return (
     <div className='container mx-auto'>
       <div className='py-10' id='introduction'>
-        <h1 className='text-5xl font-semibold text-gold-600'>About</h1>
+        <h1 className='text-5xl font-semibold text-midnight-500'>About</h1>
         <div className='py-3 text-lg'>
           <p className='py-2'>
-            Marketing Analytics leader with a decade of startup and agency
+            Data leader with over a decade of startup and agency
             experience helping B2C and B2B businesses with their mobile app and
             web-based products.
           </p>
@@ -39,7 +39,7 @@ export default async function About() {
             <ul className='py-5 px-4 list-disc space-y-3'>
               <li>
                 Helped establish and lead Marketing &amp; Sales Analytics for
-                ShopKeep to its EBITDA positive year in the decade of the
+                ShopKeep to its first EBITDA positive year in the decade of the
                 business being in operation
               </li>
               <li>
