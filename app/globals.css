@@ -22,3 +22,10 @@ h6 {
 #footer-logo {
   font-family: var(--font-gelasio);
 }
+
+#content-body > table {
+  width: 100%;
+  white-space: nowrap; /* Prevent line breaks within table cells */
+  overflow-x: auto; /* Enable horizontal scrollbar when needed */
+  display: block; /* Make the table behave like a block element */
+}

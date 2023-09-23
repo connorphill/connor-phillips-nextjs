@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-async function Post({ params }: { params: { slug: string } }) {
+export async function Post({ params }: { params: { slug: string } }) {
   console.log(params.slug);
   const post: any = await getSinglePost(params.slug);
 
@@ -61,7 +61,7 @@ async function Post({ params }: { params: { slug: string } }) {
       month: '2-digit',
       day: '2-digit',
       year: 'numeric',
-    }; 
+    };
 
     post.dateFormatted = new Intl.DateTimeFormat('en-US', options).format(
       new Date(post.published_at)

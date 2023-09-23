@@ -2,7 +2,12 @@ import React from 'react';
 import TopicsNav from './TopicsNav';
 import Link from 'next/link';
 
-export default function TopNavLinks() {
+interface LinkProps {
+  setMobileMenu: (value: boolean) => void;
+}
+
+
+export default function TopNavLinks({ setMobileMenu }: LinkProps) {
   return (
     <ul className='flex flex-col space-y-5 pt-5 lg:pt-0 lg:space-y-0 lg:flex-row lg:space-x-10'>
       <TopicsNav />
@@ -23,7 +28,7 @@ export default function TopNavLinks() {
         </svg>
 
         <p className='ml-2'>
-          <Link href='/portfolio'>Portfolio</Link>
+          <Link href='/portfolio' onClick={() => { setMobileMenu(false); }}>Portfolio</Link>
         </p>
       </li>
       <li className='flex flex-row'>
@@ -42,7 +47,7 @@ export default function TopNavLinks() {
           />
         </svg>
         <p className='ml-2'>
-          <Link href='/about'>About</Link>
+          <Link href='/about' onClick={() => { setMobileMenu(false); }}>About</Link>
         </p>
       </li>
     </ul>

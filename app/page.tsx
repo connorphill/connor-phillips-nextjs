@@ -6,19 +6,25 @@ import { getPosts } from '@/libs/ghost';
 
 export default async function Home() {
   const getPost: any = await getPosts();
-  console.log('getPost() type:')
-  console.log(typeof(getPost))
-  console.log(getPost[0])
 
   return (
     <div className='container mx-auto'>
       <div className='flex'>
         <div className='flex-auto flex-col basis-4/6 py-2 divide-y'>
           {getPost.map((item: any) => {
+
+            var excerpt;
+
+            if(!item.custom_excerpt){
+              excerpt = `${item.excerpt}..`;
+            } else {
+              excerpt = item.custom_excerpt;
+            }
+
             return (
               <Card
                 title={item.title}
-                custom_excerpt={item.custom_excerpt}
+                custom_excerpt={excerpt}
                 primary_tag={item.primary_tag.name}
                 slug={item.slug}
                 image={item.feature_image}

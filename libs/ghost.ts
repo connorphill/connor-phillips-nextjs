@@ -59,6 +59,7 @@ export async function getSinglePost(postSlug: String) {
       include: 'tags' as string,
     })
     .catch((err: any) => {
+      console.log('Error')
       console.error(err);
     });
 }

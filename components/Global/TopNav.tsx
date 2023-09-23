@@ -1,16 +1,38 @@
 'use client';
-import React, { useState } from 'react';
-import { ThemeSwitcher } from '../ThemeSwitcher';
-import TopicsNav from './TopicsNav';
-import Link from 'next/link';
+import React, { useState, useRef, useEffect } from 'react';
 import TopNavLinks from './TopNavLinks';
 import SocialLinks from './SocialLinks';
 
 export default function TopNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [mobileClick, setMobileClick] = useState(false);
+
+const useOutsideClick = (callback: () => void) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        callback();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [callback]);
+
+  return ref;
+};
+
+  const ref = useOutsideClick(() => {
+    setMobileMenu(false);
+  });
 
   return (
-    <nav className=''>
+    <nav ref={ref}>
       <div className='container relative mx-auto flex items-center justify-between py-4'>
         {/* Logo */}
         <div className='flex flex-col md:flex-row'>
@@ -20,7 +42,7 @@ export default function TopNav() {
         </div>
         {/* Primary Nav */}
         <div className='hidden lg:flex ml-20'>
-          <TopNavLinks />
+          <TopNavLinks setMobileMenu={setMobileMenu} />
         </div>
         {/* Primary Nav */}
         <div className='hidden lg:flex ml-20'>
@@ -64,7 +86,7 @@ export default function TopNav() {
         id='mobile-menu'
       >
         <div className='flex flex-row'>
-        <TopNavLinks />
+        <TopNavLinks setMobileMenu={setMobileMenu} />
         </div>
         <SocialLinks />
       </div>

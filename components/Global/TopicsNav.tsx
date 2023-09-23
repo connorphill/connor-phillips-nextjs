@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React, { MutableRefObject, RefObject, useState, useEffect } from 'react';
 import TopicsLinks from './TopicsLinks';
 
@@ -17,7 +16,6 @@ export default function TopicsNav() {
       console.log(e)
       console.log(ref)
       if (ref.current && !ref.current.contains(e.target as Node)) {
-        console.log('CLICKS')
         callback();
       }
     };
@@ -98,7 +96,7 @@ export default function TopicsNav() {
             : 'hidden'
         }`}
       >
-        <TopicsLinks setTopicsMenu={setTopicsMenu} />
+        <TopicsLinks setTopicsMenu={setTopicsMenu} ref={ref} />
       </div>
     </div>
   );
