@@ -1,6 +1,6 @@
 import React from 'react';
-import { getSingleTag, getPostsFromTag } from '@/libs/ghost';
-import Card from '@/components/Card';
+import { getSingleTag, getPostsFromTag } from '../../../libs/ghost';
+import Card from '../../../components/Card';
 
 export default async function Tag({ params }: { params: { slug: string } }) {
   var posts: any = [];
