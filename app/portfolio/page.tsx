@@ -11,7 +11,7 @@ export default function Portfolio() {
         </div>
         {/* Businesses Section */}
         <div className='flex flex-col' id='businesses'>
-          <h2 className='text-2xl lg:text-4xl text-gold-500'>Businesses</h2>
+          <h2 className='text-2xl lg:text-4xl text-midnight-400'>Businesses</h2>
           <p className='py-4'>
             Businesses that I have founded or co-founded that have led to business and technical development in various disciplines. My role for every business has ranged from web/mobile development to strategy, and marketing/sales.
           </p>
@@ -42,7 +42,7 @@ export default function Portfolio() {
           </div>
         </div>
         <div className='' id='projects'>
-          <h2 className='text-2xl lg:text-4xl mt-10 text-gold-500'>Projects</h2>
+          <h2 className='text-2xl lg:text-4xl mt-10 text-midnight-400'>Projects</h2>
           <p className='py-4'>
             I love figuring out ways to use my technical abilities to come up with creative solutions to my everyday problems, and/or artistic pursuits. These projects range in purpose from visualizing my sleep patterns to understand my body to a simple nostalgic pursuit of the old days of using a Windows computer with a dial-up modem.
           </p>
