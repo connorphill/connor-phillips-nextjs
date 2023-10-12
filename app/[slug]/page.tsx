@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { getSinglePost } from '@/libs/ghost';
+import NewsletterForm from '../../components/Global/Newsletter';
 
 type Props = {
   params: { title: string, description: string };
@@ -105,7 +106,11 @@ export async function Post({ params }: { params: { slug: string } }) {
           id='content-body'
           dangerouslySetInnerHTML={{ __html: post?.html }}
         ></div>
+        <div className='my-8 lg:px-44'>
+      <NewsletterForm />
       </div>
+      </div>
+      
     </div>
   );
 }

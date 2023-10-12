@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
+import NewsletterForm from '../Global/Newsletter';
 
 export default function SidebarInfo() {
   return (
-    <div className='p-2 ml-20 bg-gray-100'>
+    <div className='p-2 ml-20'>
+    <div className=' bg-gray-100 mb-5'>
       {/* Header */}
       <div className='flex flex-col p-2 mb-3 items-center justify-center'>
         <div className='relative h-20 w-20 mb-2'>
@@ -46,5 +48,7 @@ export default function SidebarInfo() {
         </p>
       </div>
     </div>
+      <NewsletterForm />
+      </div>
   );
 }
