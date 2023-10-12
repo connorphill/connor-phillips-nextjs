@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function SocialLinks() {
   return (
-    <ul className='flex pt-5 lg:pt-0 lg:space-y-0 justify-around lg:space-x-10'>
+    <ul className='flex pt-5 lg:pt-0 lg:space-y-0 justify-around lg:space-x-10' id="nav-social-links">
     <li>
         <Link
           href='https://www.linkedin.com/in/connorphillips'
