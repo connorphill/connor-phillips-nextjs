@@ -19,14 +19,14 @@ export default async function About() {
           <p className='py-2'>
             Currently, I lead the US Analytics team at the growth marketing
             agency,
-            <a href='https://twigeo.com/' className='text-gold-600 hover:text-gold-700'>Twigeo</a>, working with
+            <a href='https://twigeo.com/' className='text-gold-600 hover:text-gold-700'>&nbsp;Twigeo</a>, working with
             growth-focused clients ranging in industries from ride share to
             language learning.
           </p>
           <p className='py-2'>
             Prior to Twigeo, I helped establish and lead marketing and sales
             analytics at ShopKeep, which was acquired by
-            <a href='https://www.lightspeedhq.com/' className='text-gold-600 hover:text-gold-700'>Lightspeed Commerce</a>
+            <a href='https://www.lightspeedhq.com/' className='text-gold-600 hover:text-gold-700'>&nbsp;Lightspeed Commerce</a>
             (NYSE: LSPD) in 2020.
           </p>
           <p className='py-2'>
