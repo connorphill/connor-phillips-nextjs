@@ -3,8 +3,9 @@ import { Metadata } from 'next'
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { getSinglePost } from '@/libs/ghost';
+import { getSinglePost } from '../../libs/ghost';
 import NewsletterForm from '../../components/Global/Newsletter';
+import ImageHandler from '../../components/Global/ImageHandler';
 
 type Props = {
   params: { title: string, description: string };
@@ -91,13 +92,7 @@ export async function Post({ params }: { params: { slug: string } }) {
           </div>
           {post?.feature_image ?
           <div className='md:mx-auto overflow-hidden  md:h-full relative md:order-last'>
-            <Image
-              src={post?.feature_image}
-              width={600}
-              height={400}
-              className='max-md:h-32 object-cover'
-              alt='Test'
-            />
+            <ImageHandler src={post?.feature_image} width={600} height={400} alt={post?.title} />
           </div>
           : null}
         </div>

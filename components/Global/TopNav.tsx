@@ -36,7 +36,7 @@ const useOutsideClick = (callback: () => void) => {
       <div className='container relative mx-auto flex items-center justify-between py-4'>
         {/* Logo */}
         <div className='flex flex-col md:flex-row'>
-          <h2 className='text-5xl font-bold'>
+          <h2 className='text-3xl lg:text-5xl font-bold'>
             <a href='/'>Connor Phillips</a>
           </h2>
         </div>

@@ -16,11 +16,9 @@ export default async function Tag({ params }: { params: { slug: string } }) {
         <div className='flex flex-col pb-10' id='content-header'>
           <h1 className='text-3xl lg:text-5xl font-semibold text-midnight-500'>{tags?.name}</h1>
         </div>
-        <div id='content-body'>
+        <div className='py-2 divide-y' id='content-body'>
           <ul>
             {posts.map((item: any) => {
-              // console.log(`Page: ${item.slug}`);
-              // console.log(`Image: ${item.feature_image}`);
               
               var imagePath;
               var excerpt;

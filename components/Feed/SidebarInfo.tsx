@@ -18,7 +18,7 @@ export default function SidebarInfo() {
           />
         </div>
         <div className='flex flex-row'>
-          <h3 className='text-2xl font-bold ml-2 '>Connor Phillips</h3>
+          <h1 className='text-2xl font-bold ml-2 '>Connor Phillips</h1>
         </div>
       </div>
       {/* Sub-header */}

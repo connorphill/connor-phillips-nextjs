@@ -1,7 +1,8 @@
-import Card from '@/components/Card';
-import SidebarInfo from '@/components/Feed/SidebarInfo';
-import Pagination from '@/components/Global/Pagination';
-import { getPosts } from '@/libs/ghost';
+import Card from '../components/Card';
+import SidebarInfo from '../components/Feed/SidebarInfo';
+import Pagination from '../components/Global/Pagination';
+import { getPosts } from '../libs/ghost';
+import React from 'react';
 
 
 export default async function Home() {

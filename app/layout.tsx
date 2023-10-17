@@ -1,13 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Gelasio } from 'next/font/google';
-import { usePathname, useSearchParams } from "next/navigation"
 import { ThemeProvider } from './theme-provider';
 import Footer from './footer';
 import Script from 'next/script';
 import TopNav from '../components/Global/TopNav';
 import React from 'react';
-import { pageview } from '../libs/gtm';
 import Analytics from '../components/Global/Analytics';
 const GTM_ID = process.env.GA4_MEASUREMENT_ID;
 
@@ -29,15 +27,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const pathname = usePathname()
-  // const searchParams = useSearchParams()
-
-  // useEffect(() => {
-  //   if (pathname) {
-  //     pageview(pathname)
-  //   }
-  // }, [pathname, searchParams])
-
 
   return (
     <html lang='en'>

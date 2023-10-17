@@ -65,10 +65,10 @@ export default async function About() {
         </div>
       </div>
       <div className='py-3' id='skills'>
-        <h2 className='text-5xl text-gold-500'>Skills</h2>
+        <h2 className='text-5xl text-midnight-400'>Skills</h2>
         <div className='flex flex-col lg:flex-row mt-5 justify-around md:space-x-4 space-y-5 md:space-y-0'>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-500'>
-            <h3 className='text-2xl flex items-center'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-midnight-500'>
+            <h3 className='text-2xl flex items-center '>
               <svg
                 width='512'
                 height='512'
@@ -275,7 +275,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-500'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-midnight-500'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -392,7 +392,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-500'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-midnight-500'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 width='512'
@@ -492,7 +492,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-500'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-midnight-500'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -577,7 +577,7 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-gold-500'>
+          <div className='flex flex-col py-2 px-3 border-solid border-2 border-midnight-500'>
             <h3 className='text-2xl flex items-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
