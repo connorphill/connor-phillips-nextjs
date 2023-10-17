@@ -18,7 +18,7 @@ export default function Portfolio() {
           <div className='flex flex-col md:flex-row justify-between py-5'>
             <div className='basis-1/2 py-5 md:mr-5'>
               <div>
-                <h3 className='text-2xl font-semibold'><Link href="/synotate" className='text-gold-500 hover:text-gold-700 hover:border-b-2 hover:border-gold-700'>Synotate</Link></h3>
+                <h3 className='text-2xl font-semibold'><Link href="/portfolio/synotate/" className='text-gold-500 hover:text-gold-700 hover:border-b-2 hover:border-gold-700'>Synotate</Link></h3>
                 <p className='pt-3'><i>Development: 2017 - 2018 <br /> Production: 2019</i></p>
               </div>
               <div className='w-200 h-200 overflow-hidden'>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ImageHandler from './Global/ImageHandler';
 
 interface CardProps {
   key: string;
@@ -19,22 +20,13 @@ export default function Card({
   slug,
   image,
 }: CardProps) {
-  // console.log(
-  //   `title: ${title}\n custom_excerpt: ${custom_excerpt}\n primary_tag: ${primary_tag}\n slug: ${slug}\n image: ${image}`
-  // );
   return (
     <div>
       <div className='flex flex-col md:flex-row justify-center py-3'>
         <div className='md:mx-auto overflow-hidden md:h-full relative md:order-last md:basis-2/6 md:pl-5'>
           <Link href={`/${slug}`}>
             {image ? (
-              <Image
-                src={image}
-                width={600}
-                height={400}
-                className='max-md:h-32 object-cover'
-                alt='Test'
-              />
+              <ImageHandler src={image} width={600} height={400} alt={title} />
             ) : null}
           </Link>
         </div>
