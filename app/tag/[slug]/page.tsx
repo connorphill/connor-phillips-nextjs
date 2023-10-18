@@ -39,7 +39,6 @@ export default async function Tag({ params }: { params: { slug: string } }) {
                 imagePath =
                   'https:/s3.amazonaws.com' +
                   item.feature_image?.split('//s3.amazonaws.com')[1];
-                console.log(imagePath);
               } else {
                 imagePath = item.feature_image;
               }

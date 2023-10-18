@@ -5,14 +5,14 @@ import Pagination from '@/components/Global/Pagination';
 import { getPostsByPage } from '@/libs/ghost';
 
 interface PostJSONProps {
-  id: String;
-  title: String;
-  custom_excerpt: String;
+  id: string;
+  title: string;
+  custom_excerpt: string;
   primary_tag: {
-    name: String;
+    name: string;
   };
-  slug: String;
-  feature_image: String;
+  slug: string;
+  feature_image: string;
 }
 
 export default async function PagePosts({
@@ -27,12 +27,12 @@ export default async function PagePosts({
   //     console.log(getPost[i].feature_image);
   //   }
   var pagination = getPost?.meta?.pagination;
-  console.log({
-    page: pagination?.page,
-    pageTotal: pagination?.pages,
-    pageNext: pagination?.next,
-    pagePrev: pagination?.prev,
-  });
+  // console.log({
+  //   page: pagination?.page,
+  //   pageTotal: pagination?.pages,
+  //   pageNext: pagination?.next,
+  //   pagePrev: pagination?.prev,
+  // });
   return (
     <div className='container mx-auto'>
       <div className='flex'>

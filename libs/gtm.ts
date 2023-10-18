@@ -15,9 +15,9 @@ export const pageview = (url: string, content: string, page: string) => {
       page_category: page
     })
   } else {
-    console.log({
-      event: "pageview",
-      page: url,
-    })
+    // console.log({
+    //   event: "pageview",
+    //   page: url,
+    // })
   }
 }

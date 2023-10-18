@@ -10,7 +10,7 @@ export default function Analytics() {
   var page = "";
 
 
-function formatString(inputString) {
+function formatString(inputString: string) {
   // Check if the input string contains a hyphen
   if (inputString.includes('-')) {
     // Split the string by "-"
@@ -50,8 +50,6 @@ function formatString(inputString) {
   
 
   useEffect(() => {
-    console.log(pathname)
-    console.log(page, " ", content)
     if (pathname) {
       return pageview(pathname, content, page)
     }

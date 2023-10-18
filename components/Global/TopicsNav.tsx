@@ -1,38 +1,38 @@
-import React, { MutableRefObject, RefObject, useState, useEffect } from 'react';
+import React, { MutableRefObject, RefObject, useRef, useState, useEffect } from 'react';
 import TopicsLinks from './TopicsLinks';
 
 export default function TopicsNav() {
   const [topicsMenu, setTopicsMenu] = useState(false);
 
-  const ref = React.useRef() as MutableRefObject<HTMLInputElement>;
+  const ref = useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
 
   // Detect outside component click
-  const useOutsideClick = (
-    ref: RefObject<HTMLElement>,
-    callback: () => void
-  ) => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const handleClick = (e: MouseEvent) => {
-      console.log(e)
-      console.log(ref)
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        callback();
-      }
-    };
-    useEffect(() => {
-      document.addEventListener('click', handleClick);
+  // const useOutsideClick = (
+  //   ref: RefObject<HTMLElement>,
+  //   callback: () => void
+  // ) => {
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  //   const handleClick = (e: MouseEvent) => {
+  //     console.log(e)
+  //     console.log(ref)
+  //     if (ref.current && !ref.current.contains(e.target as Node)) {
+  //       callback();
+  //     }
+  //   };
+  //   useEffect(() => {
+  //     document.addEventListener('click', handleClick);
 
-      return () => {
-        document.removeEventListener('click', handleClick);
-      };
-    }, [handleClick]);
-  };
+  //     return () => {
+  //       document.removeEventListener('click', handleClick);
+  //     };
+  //   }, [handleClick]);
+  // };
 
-  useOutsideClick(ref, () => {
-    if (topicsMenu) {
-      setTopicsMenu(false);
-    }
-  });
+  // useOutsideClick(ref, () => {
+  //   if (topicsMenu) {
+  //     setTopicsMenu(false);
+  //   }
+  // });
 
 
   return (
@@ -96,7 +96,7 @@ export default function TopicsNav() {
             : 'hidden'
         }`}
       >
-        <TopicsLinks setTopicsMenu={setTopicsMenu} ref={ref} />
+        <TopicsLinks setTopicsMenu={setTopicsMenu as () => void} />
       </div>
     </div>
   );

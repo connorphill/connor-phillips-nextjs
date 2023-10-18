@@ -5,8 +5,8 @@ export default function Gallery() {
        useEffect(() => {
     const images = document.querySelectorAll('.kg-gallery-image img');
 
-    images.forEach((image: HTMLImageElement) => {
-      const container = image.closest('.kg-gallery-image');
+    images.forEach((image) => {
+      const container = image.closest('.kg-gallery-image') as HTMLElement;
       if (container) {
         const width = image.getAttribute('width');
         const height = image.getAttribute('height');

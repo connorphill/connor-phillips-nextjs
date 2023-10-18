@@ -15,7 +15,7 @@ export default async function sitemap() {
       url: url,
       lastModified: date,
     }));
-    console.log(postsXml);
+    // console.log(postsXml);
     return postsXml;
   })
   .catch((error) => {
@@ -28,7 +28,7 @@ export default async function sitemap() {
             url: url,
             lastModified: new Date().toISOString()
         }))
-        console.log(tagsXml)
+        // console.log(tagsXml)
         return tagsXml;
     })
 
@@ -37,7 +37,7 @@ export default async function sitemap() {
             url: url,
             lastModified: new Date().toISOString()
         }))
-        console.log(pagesXml)
+        // console.log(pagesXml)
         return pagesXml;
     })
 

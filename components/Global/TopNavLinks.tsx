@@ -3,11 +3,14 @@ import TopicsNav from './TopicsNav';
 import Link from 'next/link';
 
 interface LinkProps {
-  setMobileMenu: (value: boolean) => void;
+  setMobileMenu: () => void;
 }
 
 
 export default function TopNavLinks({ setMobileMenu }: LinkProps) {
+  const handleLinkClick = () => {
+    setMobileMenu() // Close the mobile menu when a link is clicked
+  };
   return (
     <ul className='flex flex-col space-y-5 pt-5 lg:pt-0 lg:space-y-0 lg:flex-row lg:space-x-10'>
       <TopicsNav />
@@ -28,7 +31,7 @@ export default function TopNavLinks({ setMobileMenu }: LinkProps) {
         </svg>
 
         <p className='ml-2'>
-          <Link href='/portfolio' onClick={() => { setMobileMenu(false); }}>Portfolio</Link>
+          <Link href='/portfolio' onClick={() => { handleLinkClick() }}>Portfolio</Link>
         </p>
       </li>
       <li className='flex flex-row'>
@@ -47,7 +50,7 @@ export default function TopNavLinks({ setMobileMenu }: LinkProps) {
           />
         </svg>
         <p className='ml-2'>
-          <Link href='/about' onClick={() => { setMobileMenu(false); }}>About</Link>
+          <Link href='/about' onClick={() => { handleLinkClick()  }}>About</Link>
         </p>
       </li>
     </ul>
