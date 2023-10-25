@@ -10,7 +10,7 @@ export default function SidebarInfo() {
       <div className='flex flex-col p-2 mb-3 items-center justify-center'>
         <div className='relative h-20 w-20 mb-2'>
           <Image
-            src={'/hotel-empire.jpeg'}
+            src={'/connor-phillips.jpeg'}
             layout='fill'
             objectFit='cover'
             alt={'Profile Picture'}

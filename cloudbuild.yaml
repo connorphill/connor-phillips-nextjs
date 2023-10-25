@@ -1,9 +1,22 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
     args:
-      [
-        'build',
-        '-t',
-        'us-central1-docker.pkg.dev/${PROJECT_ID}/connor-phillips/connor-phillips-nextjs',
-        '.',
-      ]
+      - '-c'
+      - |
+        docker build \
+          --build-arg GHOST_CONTENT_API=93d2edba6baddeeb3a6745de1f \
+          --build-arg GTM_MEASUREMENT_ID=GTM-MWVFLQ9W \
+          -t us-central1-docker.pkg.dev/${PROJECT_ID}/connor-phillips-website-repo/connor-phillips-image:latest .
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gcloud run deploy connor-phillips-website \
+          --image=us-central1-docker.pkg.dev/${PROJECT_ID}/connor-phillips-website-repo/connor-phillips-image:latest \
+          --platform=managed \
+          --region=us-central1 \
+          --allow-unauthenticated 
+images:
+  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/connor-phillips-website-repo/connor-phillips-image:latest'
