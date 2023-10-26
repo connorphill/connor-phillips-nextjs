@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
+  poweredByHeader: false,
   images: {
     domains: ['s3.amazonaws.com', 'images.unsplash.com'],
     // remotePatterns: [

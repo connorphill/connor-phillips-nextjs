@@ -1,14 +1,15 @@
 import GhostContentAPI from '@tryghost/content-api';
+import { cache } from 'react'
 
 // Create API instance with site credentials
 const api: any = new GhostContentAPI({
-  url: process.env.GHOST_CONTENT_URL as string,
-  key: process.env.GHOST_CONTENT_API as string,
+  url: "https://admin.connorphillips.com" as string || "",
+  key: process.env.GHOST_CONTENT_API as string || "",
   version: 'v5.0',
 });
 
 // GET all posts
-export async function getPosts() {
+export const getPosts = cache(async () => {
   return await api.posts
     .browse({
       include: 'tags',
@@ -17,7 +18,7 @@ export async function getPosts() {
     .catch((err: any) => {
       console.error(err);
     });
-}
+})
 
 // GET all posts for sitemap
 export async function getPostsSitemap() {
@@ -39,7 +40,7 @@ export async function getPostsSitemap() {
 }
 
 // GET posts by page
-export async function getPostsByPage(pageNum: number) {;
+export const getPostsByPage = cache(async(pageNum: number) => {
   return await api.posts
     .browse({
       include: 'tags',
@@ -49,10 +50,10 @@ export async function getPostsByPage(pageNum: number) {;
     .catch((err: any) => {
       console.error(err);
     });
-}
+})
 
 // GET single post by post slug
-export async function getSinglePost(postSlug: String) {
+export const getSinglePost = cache(async (postSlug: String) => {
   return await api.posts
     .read({
       slug: postSlug as string,
@@ -62,9 +63,10 @@ export async function getSinglePost(postSlug: String) {
       console.log('Error')
       console.error(err);
     });
-}
+})
+
 // GET single tag by tag slug
-export async function getSingleTag(tagSlug: String) {
+export const getSingleTag = cache(async (tagSlug: String) => {
   return await api.tags
     .read({
       slug: tagSlug as string,
@@ -73,10 +75,10 @@ export async function getSingleTag(tagSlug: String) {
     .catch((err: any) => {
       console.error(err);
     });
-}
+})
 
 // GET all posts by tag slug
-export async function getPostsFromTag(tagSlug: String) {
+export const getPostsFromTag = cache(async (tagSlug: String) => {
   return await api.posts
     .browse({
       filter: `tag:${tagSlug}`,
@@ -85,10 +87,10 @@ export async function getPostsFromTag(tagSlug: String) {
     .catch((err: any) => {
       console.error(err);
     });
-}
+})
 
 // GET all tags
-export async function getTags() {
+export const getTags = cache(async () => {
   return await api.tags
     .browse({
       limit: 'all',
@@ -96,7 +98,7 @@ export async function getTags() {
     .catch((err: any) => {
       console.error(err);
     });
-}
+})
 
 // GET all tags for sitemap xml
 export async function getTagsSitemap() {
@@ -118,7 +120,7 @@ export async function getTagsSitemap() {
 }
 
 // GET all pages
-export async function getPages() {
+export const getPages = cache(async () => {
   return await api.pages
     .browse({
       limit: 'all',
@@ -126,7 +128,7 @@ export async function getPages() {
     .catch((err: any) => {
       console.error(err);
     });
-}
+})
 
 // GET all pages for sitemap xml
 export async function getPagesSitemap() {

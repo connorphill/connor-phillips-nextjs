@@ -7,7 +7,8 @@ import Script from 'next/script';
 import TopNav from '../components/Global/TopNav';
 import React from 'react';
 import Analytics from '../components/Global/Analytics';
-const GTM_ID = process.env.GA4_MEASUREMENT_ID;
+
+const GTM_ID = process.env.GTM_MEASUREMENT_ID;
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -45,13 +46,13 @@ export default function RootLayout({
         __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display: none; visibility: hidden;"></iframe>`,
         }} />
         <Analytics />
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+        {/* <ThemeProvider attribute='class' defaultTheme='light' enableSystem> */}
           <main>
             <TopNav />
             {children}
             <Footer />
           </main>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );

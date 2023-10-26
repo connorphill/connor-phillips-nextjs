@@ -1,6 +1,5 @@
 import React from 'react';
 import { Metadata } from 'next'
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { getSinglePost } from '../../libs/ghost';
@@ -49,8 +48,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export async function Post({ params }: { params: { slug: string } }) {
-  console.log(params.slug);
+export default async function Post({ params }: { params: { slug: string } }) {
+
   const post: any = await getSinglePost(params.slug);
 
     const metadata = {
@@ -110,4 +109,4 @@ export async function Post({ params }: { params: { slug: string } }) {
   );
 }
 
-export { Post as default}
+// export { Post as default}

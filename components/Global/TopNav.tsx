@@ -5,7 +5,7 @@ import SocialLinks from './SocialLinks';
 
 export default function TopNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [mobileClick, setMobileClick] = useState(false);
+  // const [mobileClick, setMobileClick] = useState(false);
 
 const useOutsideClick = (callback: () => void) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ const useOutsideClick = (callback: () => void) => {
         </div>
         {/* Primary Nav */}
         <div className='hidden lg:flex ml-20'>
-          <TopNavLinks setMobileMenu={setMobileMenu} />
+          <TopNavLinks setMobileMenu={setMobileMenu as () => void} />
         </div>
         {/* Primary Nav */}
         <div className='hidden lg:flex ml-20'>
@@ -86,7 +86,7 @@ const useOutsideClick = (callback: () => void) => {
         id='mobile-menu'
       >
         <div className='flex flex-row'>
-        <TopNavLinks setMobileMenu={setMobileMenu} />
+        <TopNavLinks setMobileMenu={setMobileMenu as () => void} />
         </div>
         <SocialLinks />
       </div>

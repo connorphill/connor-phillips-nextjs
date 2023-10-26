@@ -4,7 +4,7 @@ type WindowWithDataLayer = Window & {
 
 declare const window: WindowWithDataLayer
 
-export const GTM_ID = process.env.GA4_MEASUREMENT_ID;
+export const GTM_ID = process.env.GTM_MEASUREMENT_ID;
 
 export const pageview = (url: string, content: string, page: string) => {
   if (typeof window.dataLayer !== "undefined") {
@@ -15,9 +15,9 @@ export const pageview = (url: string, content: string, page: string) => {
       page_category: page
     })
   } else {
-    console.log({
-      event: "pageview",
-      page: url,
-    })
+    // console.log({
+    //   event: "pageview",
+    //   page: url,
+    // })
   }
 }
