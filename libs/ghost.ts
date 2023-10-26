@@ -3,7 +3,7 @@ import { cache } from 'react'
 
 // Create API instance with site credentials
 const api: any = new GhostContentAPI({
-  url: "https://www.connorphillips.com" as string || "",
+  url: "https://admin.connorphillips.com" as string || "",
   key: process.env.GHOST_CONTENT_API as string || "",
   version: 'v5.0',
 });
