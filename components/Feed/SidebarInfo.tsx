@@ -7,7 +7,7 @@ export default function SidebarInfo() {
     <div className='p-2 ml-20'>
     <div className=' bg-gray-100 mb-5'>
       {/* Header */}
-      <div className='flex flex-col p-2 mb-3 items-center justify-center'>
+      <div className='flex flex-col px-4 py-2 items-center justify-center'>
         <div className='relative h-20 w-20 mb-2'>
           <Image
             src={'/connor-phillips.jpeg'}
@@ -22,13 +22,13 @@ export default function SidebarInfo() {
         </div>
       </div>
       {/* Sub-header */}
-      <div className='flex flex-row p-2 items-center justify-center'>
-        <p className='text-gray-500 font-light'>
+      <div className='flex flex-row px-4 items-center justify-center'>
+        <p className='text-gray-500 font-light text-sm lg:text-md py-1'>
           contact [at] connorphillips.com
         </p>
       </div>
       {/* Body */}
-      <div className='p-2'>
+      <div className='p-4'>
         <p className='font-light'>
           Marketing Analytics leader with a decade of startup and agency
           experience helping B2C and B2B businesses with their mobile app and
