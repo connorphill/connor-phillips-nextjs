@@ -9,7 +9,7 @@ export default async function Home() {
   const getPost: any = await getPosts();
 
   return (
-    <div className='container mx-auto'>
+    <div className='md:container px-5 md:px-0 mx-auto'>
       <div className='flex'>
         <div className='flex-auto flex-col basis-4/6 py-2 divide-y'>
           {getPost.map((item: any) => {

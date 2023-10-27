@@ -22,8 +22,8 @@ export default function Card({
 }: CardProps) {
   return (
     <div>
-      <div className='flex flex-col md:flex-row justify-center py-3'>
-        <div className='md:mx-auto overflow-hidden md:h-full relative md:order-last md:basis-2/6 md:pl-5'>
+      <div className='flex flex-col lg:flex-row justify-center py-3'>
+        <div className='lg:mx-auto overflow-hidden lg:h-full relative lg:order-last lg:basis-2/6 md:pl-5'>
           <Link href={`/${slug}`}>
             {image ? (
               <ImageHandler src={image} width={600} height={400} alt={title} />

@@ -16,7 +16,7 @@ const ImageHandler: React.FC<ImageHandlerProps> = ({ src, alt, width, height }) 
       src={src}
       width={width}
       height={height}
-      className='max-md:h-32 object-cover'
+      className='max-lg:h-32 object-cover'
       alt={alt}
       onError={(e) => {
         e.currentTarget.classList.add('hidden');

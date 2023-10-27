@@ -30,6 +30,13 @@ h6 {
   display: block; /* Make the table behave like a block element */
 }
 
+.kg-image-card img, .kg-card-hascaption {
+    margin: auto;
+    text-align: center;
+}
+
+
+
 /* Ghost Bookmark CSS */
 
 .kg-bookmark-card,
