@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className='container mx-auto'>
       <div className='flex justify-center'>
-        <ul className='flex flex-row space-x-10 py-5 font-normal text-primary-600 hover:text-midnight-800'>
+        <ul className='flex flex-row justify-evenly space-x-10 py-5 font-normal text-primary-600 hover:text-midnight-800'>
           <li>
             <Link href='/about'>About</Link>
           </li>
