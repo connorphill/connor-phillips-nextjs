@@ -60,7 +60,6 @@ export const getSinglePost = cache(async (postSlug: String) => {
       include: 'tags' as string,
     })
     .catch((err: any) => {
-      console.log('Error')
       console.error(err);
     });
 })
