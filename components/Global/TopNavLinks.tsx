@@ -12,7 +12,7 @@ export default function TopNavLinks({ setMobileMenu }: LinkProps) {
     setMobileMenu() // Close the mobile menu when a link is clicked
   };
   return (
-    <ul className='flex flex-col space-y-5 pt-5 lg:pt-0 lg:space-y-0 lg:flex-row lg:space-x-10'>
+    <ul className='flex flex-col duration-300 ease-out sm:transition-none space-y-5 pt-5 lg:pt-0 lg:space-y-0 lg:flex-row lg:space-x-10'>
       <TopicsNav />
       <li className='flex flex-row'>
         <svg
