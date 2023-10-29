@@ -7,7 +7,7 @@ interface LinkProps {
 
 export default function TopicsLinks({ setTopicsMenu }: LinkProps) {
   return (
-    <ul className='flex flex-col px-3 divide-y'>
+    <ul className='flex flex-col px-3 divide-y lg:border-slate-200 lg:border-2'>
       <li className='block p-4'>
         <Link href='/tag/data' onClick={() => { setTopicsMenu(); }}>Data</Link>
       </li>

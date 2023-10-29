@@ -30,7 +30,7 @@ export default function SidebarInfo() {
       {/* Body */}
       <div className='p-4'>
         <p className='font-light'>
-          Marketing Analytics leader with a decade of startup and agency
+          Data leader with a decade of startup and agency
           experience helping B2C and B2B businesses with their mobile app and
           web-based products.
         </p>
