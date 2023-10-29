@@ -1,4 +1,10 @@
 import React from 'react';
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About | Connor Phillips',
+}
+
 
 export default async function About() {
   return (

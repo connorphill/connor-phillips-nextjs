@@ -1,6 +1,7 @@
 import React from 'react';
 import { getTags } from '@/libs/ghost';
 import Link from 'next/link';
+import type { Metadata } from 'next'
 
 interface Tag {
   id: string;
@@ -10,6 +11,10 @@ interface Tag {
 
 interface TagsProps {
   tags: Tag[];
+}
+
+export const metadata: Metadata = {
+  title: 'Topics | Connor Phillips',
 }
 
 export default async function Tags() {
