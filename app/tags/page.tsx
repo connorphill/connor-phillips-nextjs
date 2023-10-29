@@ -15,6 +15,19 @@ interface TagsProps {
 
 export const metadata: Metadata = {
   title: 'Topics | Connor Phillips',
+  description: 'All of the topics that Connor Phillips has written about.',
+  alternates: {
+      canonical: `/tags/`,
+  },
+  openGraph: {
+        url: '/tags/',
+        title: 'Topics | Connor Phillips',
+        description: 'All of the topics that Connor Phillips has written about.',
+  },
+  twitter: {
+    title: 'Topics | Connor Phillips',
+    description: 'All of the topics that Connor Phillips has written about.',
+  }
 }
 
 export default async function Tags() {

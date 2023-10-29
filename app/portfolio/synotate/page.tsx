@@ -6,7 +6,19 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Synotate | Connor Phillips',
-  description: 'A data analysis platform that helped businesses save time and resources by acting as a central repository of data annotations related to test results and trends found in data analysis.'
+  description: 'A data analysis platform that helped businesses save time and resources by acting as a central repository of data annotations related to test results and trends found in data analysis.',
+  alternates: {
+      canonical: `/portfolio/synotate/`,
+  },
+  openGraph: {
+        url: '/portfolio/synotate/',
+        title: 'Synotate | Connor Phillips',
+        description: 'A data analysis platform that helped businesses save time and resources by acting as a central repository of data annotations related to test results and trends found in data analysis.',
+  },
+  twitter: {
+    title: 'Synotate | Connor Phillips',
+    description: 'A data analysis platform that helped businesses save time and resources by acting as a central repository of data annotations related to test results and trends found in data analysis.',
+  }
 }
 
 export default function Synotate() {

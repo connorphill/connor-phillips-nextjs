@@ -6,7 +6,19 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Portfolio | Connor Phillips',
-  description: 'Connor Phillips portfolio of businesses that he has started, as well as software development projects.'
+  description: 'Connor Phillips portfolio of businesses that he has started, as well as his software development projects.',
+  alternates: {
+      canonical: `/portoflio/`,
+  },
+  openGraph: {
+        url: '/portfolio/synotate/',
+        title: 'Portfolio | Connor Phillips',
+        description: 'Connor Phillips portfolio of businesses that he has started, as well as his software development projects.',
+  },
+  twitter: {
+    title: 'Portfolio | Connor Phillips',
+    description: 'Connor Phillips portfolio of businesses that he has started, as well as his software development projects.',
+  }
 }
 
 export default function Portfolio() {

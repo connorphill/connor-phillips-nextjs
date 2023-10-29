@@ -7,6 +7,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const tags = await getSingleTag(params.slug);
   return {
     title: `${tags?.name} | Connor Phillips`,
+    description: `Articles that Connor Phillips has written about related to ${tags?.name}.`,
+    alternates: {
+      canonical: `/tag/${tags?.slug}`,
+    },
+    openGraph: {
+        url: `/tag/${tags?.slug}`,
+        title: `${tags?.name} | Connor Phillips`,
+        description: `Articles that Connor Phillips has written about related to ${tags?.name}.`,
+    },
+    twitter: {
+      title: `${tags?.name} | Connor Phillips`,
+      description: `Articles that Connor Phillips has written about related to ${tags?.name}.`,
+    }
   }
 }
 
