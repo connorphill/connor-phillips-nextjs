@@ -1,6 +1,27 @@
 import React from 'react';
+import type { Metadata } from 'next'
 import { getSingleTag, getPostsFromTag } from '../../../libs/ghost';
 import Card from '../../../components/Card';
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const tags = await getSingleTag(params.slug);
+  return {
+    title: `${tags?.name} | Connor Phillips`,
+    description: `Articles that Connor Phillips has written about related to ${tags?.name}.`,
+    alternates: {
+      canonical: `/tag/${tags?.slug}`,
+    },
+    openGraph: {
+        url: `/tag/${tags?.slug}`,
+        title: `${tags?.name} | Connor Phillips`,
+        description: `Articles that Connor Phillips has written about related to ${tags?.name}.`,
+    },
+    twitter: {
+      title: `${tags?.name} | Connor Phillips`,
+      description: `Articles that Connor Phillips has written about related to ${tags?.name}.`,
+    }
+  }
+}
 
 export default async function Tag({ params }: { params: { slug: string } }) {
   var posts: any = [];

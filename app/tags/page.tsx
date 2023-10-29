@@ -1,6 +1,7 @@
 import React from 'react';
 import { getTags } from '@/libs/ghost';
 import Link from 'next/link';
+import type { Metadata } from 'next'
 
 interface Tag {
   id: string;
@@ -10,6 +11,23 @@ interface Tag {
 
 interface TagsProps {
   tags: Tag[];
+}
+
+export const metadata: Metadata = {
+  title: 'Topics | Connor Phillips',
+  description: 'All of the topics that Connor Phillips has written about.',
+  alternates: {
+      canonical: `/tags/`,
+  },
+  openGraph: {
+        url: '/tags/',
+        title: 'Topics | Connor Phillips',
+        description: 'All of the topics that Connor Phillips has written about.',
+  },
+  twitter: {
+    title: 'Topics | Connor Phillips',
+    description: 'All of the topics that Connor Phillips has written about.',
+  }
 }
 
 export default async function Tags() {

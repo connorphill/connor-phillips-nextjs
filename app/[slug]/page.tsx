@@ -13,6 +13,15 @@ type Props = {
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = await getSinglePost(params.slug);
+  
+  let metaDescription = ""
+
+  if(post?.excerpt === null || post?.excerpt === ""){
+    metaDescription = post?.html.substr(0, 155);
+  } else {
+    metaDescription = post?.excerpt.substr(0, 155);
+  }
+
   if (!post){    return {
       title: "Not Found",
       description: "The page is not found",
@@ -25,8 +34,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
 
   return {
-    title: post?.title,
-    description: post?.excerpt,
+    title: `${post?.title} | Connor Phillips`,
+    description: metaDescription,
     alternates: {
       canonical: `/${post.slug}`,
     },

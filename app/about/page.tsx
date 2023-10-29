@@ -1,4 +1,20 @@
 import React from 'react';
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About | Connor Phillips',
+  alternates: {
+      canonical: `/about/`,
+  },
+  openGraph: {
+        url: '/about/',
+        title: 'About | Connor Phillips',
+  },
+  twitter: {
+    title: 'About | Connor Phillips',
+  }
+}
+
 
 export default async function About() {
   return (

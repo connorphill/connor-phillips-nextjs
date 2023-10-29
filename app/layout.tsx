@@ -18,9 +18,30 @@ const gelasio = Gelasio({
   variable: '--font-gelasio',
 });
 
+const metaTitle = 'Connor Phillips'
+const metaDescription = 'New York City based data leader, developer, marketer and entrepreneur. Passionate about technology, running, photography and film'
+
 export const metadata: Metadata = {
-  title: 'Connor Phillips',
-  description: 'New York City based data leader, developer, marketer and entrepreneur. Passionate about technology, running, photography and film',
+  title: metaTitle,
+  description: metaDescription,
+  alternates: {
+      canonical: `/`,
+    },
+    openGraph: {
+        url: '/',
+        siteName: 'Connor Phillips',
+        images: ['/pubic/connor-phillips_og-image.png'],
+        title: metaTitle,
+        description: metaDescription,
+        locale: 'en_US',
+        type: 'website'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: metaTitle,
+        description: metaDescription,
+        images: ['/pubic/connor-phillips_og-image.png']
+    }
 };
 
 export default function RootLayout({
