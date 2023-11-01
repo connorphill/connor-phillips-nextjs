@@ -9,7 +9,7 @@ const api: any = new GhostContentAPI({
 });
 
 // GET all posts
-export const getPosts = cache(async () => {
+export const getPosts = async () => {
   return await api.posts
     .browse({
       include: 'tags',
@@ -18,7 +18,7 @@ export const getPosts = cache(async () => {
     .catch((err: any) => {
       console.error(err);
     });
-})
+}
 
 // GET all posts for sitemap
 export async function getPostsSitemap() {

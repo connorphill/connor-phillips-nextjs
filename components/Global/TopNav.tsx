@@ -78,7 +78,7 @@ const useOutsideClick = (callback: () => void) => {
       </div>
       {/* Mobile Menu */}
       <div
-        className={`container flex flex-col mx-auto lg:hidden transition-transform transform ease-out duration-500 ${ mobileMenu ? '' : 'hidden'}`}
+        className={`container flex flex-col mx-auto lg:hidden transition-opacity ease-in-out delay-150 duration-300 ${ mobileMenu ? 'opacity-100 visible h-full' : 'opacity-0 invisible h-0'}`}
         id='mobile-menu'
       >
         <div className='flex flex-row'>
