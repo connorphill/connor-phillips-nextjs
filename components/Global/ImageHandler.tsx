@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import React from 'react';
 
@@ -9,14 +9,18 @@ interface ImageHandlerProps {
   height: number;
 }
 
-const ImageHandler: React.FC<ImageHandlerProps> = ({ src, alt, width, height }) => {
-
+const ImageHandler: React.FC<ImageHandlerProps> = ({
+  src,
+  alt,
+  width,
+  height,
+}) => {
   return (
     <Image
       src={src}
       width={width}
       height={height}
-      className='max-lg:h-32 object-cover'
+      className='object-cover max-lg:h-32'
       alt={alt}
       onError={(e) => {
         e.currentTarget.classList.add('hidden');

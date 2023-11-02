@@ -18,30 +18,31 @@ const gelasio = Gelasio({
   variable: '--font-gelasio',
 });
 
-const metaTitle = 'Connor Phillips'
-const metaDescription = 'New York City based data leader, developer, marketer and entrepreneur. Passionate about technology, running, photography and film'
+const metaTitle = 'Connor Phillips';
+const metaDescription =
+  'New York City based data leader, developer, marketer and entrepreneur. Passionate about technology, running, photography and film';
 
 export const metadata: Metadata = {
   title: metaTitle,
   description: metaDescription,
   alternates: {
-      canonical: `/`,
-    },
-    openGraph: {
-        url: '/',
-        siteName: 'Connor Phillips',
-        images: ['/pubic/connor-phillips_og-image.png'],
-        title: metaTitle,
-        description: metaDescription,
-        locale: 'en_US',
-        type: 'website'
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: metaTitle,
-        description: metaDescription,
-        images: ['/pubic/connor-phillips_og-image.png']
-    }
+    canonical: `/`,
+  },
+  openGraph: {
+    url: '/',
+    siteName: 'Connor Phillips',
+    images: ['/pubic/connor-phillips_og-image.png'],
+    title: metaTitle,
+    description: metaDescription,
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: metaTitle,
+    description: metaDescription,
+    images: ['/pubic/connor-phillips_og-image.png'],
+  },
 };
 
 export default function RootLayout({
@@ -49,10 +50,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang='en'>
-      <Script id="google-tag-manager" strategy="afterInteractive">
+      <Script id='google-tag-manager' strategy='afterInteractive'>
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -63,16 +63,17 @@ export default function RootLayout({
       </Script>
       <body className={`${inter.variable} ${gelasio.variable}`}>
         <noscript
-        dangerouslySetInnerHTML={{
-        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display: none; visibility: hidden;"></iframe>`,
-        }} />
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display: none; visibility: hidden;"></iframe>`,
+          }}
+        />
         <Analytics />
         {/* <ThemeProvider attribute='class' defaultTheme='light' enableSystem> */}
-          <main>
-            <TopNav />
-            {children}
-            <Footer />
-          </main>
+        <main>
+          <TopNav />
+          {children}
+          <Footer />
+        </main>
         {/* </ThemeProvider> */}
       </body>
     </html>

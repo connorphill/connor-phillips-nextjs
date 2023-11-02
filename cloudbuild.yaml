@@ -17,6 +17,6 @@ steps:
           --image=us-central1-docker.pkg.dev/${PROJECT_ID}/connor-phillips-website-repo/connor-phillips-image:latest \
           --platform=managed \
           --region=us-central1 \
-          --allow-unauthenticated 
+          --allow-unauthenticated
 images:
   - 'us-central1-docker.pkg.dev/${PROJECT_ID}/connor-phillips-website-repo/connor-phillips-image:latest'
