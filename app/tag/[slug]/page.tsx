@@ -1,9 +1,13 @@
 import React from 'react';
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
 import { getSingleTag, getPostsFromTag } from '../../../libs/ghost';
 import Card from '../../../components/Card';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const tags = await getSingleTag(params.slug);
   return {
     title: `${tags?.name} | Connor Phillips`,
@@ -12,15 +16,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       canonical: `/tag/${tags?.slug}`,
     },
     openGraph: {
-        url: `/tag/${tags?.slug}`,
-        title: `${tags?.name} | Connor Phillips`,
-        description: `Articles that Connor Phillips has written about related to ${tags?.name}.`,
+      url: `/tag/${tags?.slug}`,
+      title: `${tags?.name} | Connor Phillips`,
+      description: `Articles that Connor Phillips has written about related to ${tags?.name}.`,
     },
     twitter: {
       title: `${tags?.name} | Connor Phillips`,
       description: `Articles that Connor Phillips has written about related to ${tags?.name}.`,
-    }
-  }
+    },
+  };
 }
 
 export default async function Tag({ params }: { params: { slug: string } }) {
@@ -35,16 +39,17 @@ export default async function Tag({ params }: { params: { slug: string } }) {
     <div className='container mx-auto'>
       <div className='flex flex-col py-5 md:py-10'>
         <div className='flex flex-col pb-10' id='content-header'>
-          <h1 className='text-3xl lg:text-5xl font-semibold text-midnight-500'>{tags?.name}</h1>
+          <h1 className='text-3xl font-semibold text-midnight-500 lg:text-5xl'>
+            {tags?.name}
+          </h1>
         </div>
-        <div className='py-2 divide-y' id='content-body'>
+        <div className='divide-y py-2' id='content-body'>
           <ul>
             {posts.map((item: any) => {
-              
               var imagePath;
               var excerpt;
 
-              if(!item.custom_excerpt){
+              if (!item.custom_excerpt) {
                 excerpt = `${item.excerpt}..`;
               } else {
                 excerpt = item.custom_excerpt;
@@ -69,9 +74,9 @@ export default async function Tag({ params }: { params: { slug: string } }) {
                   custom_excerpt={excerpt}
                   primary_tag=''
                   slug={item.slug}
-                  image={imagePath} 
-                  key={''}                
-                  />
+                  image={imagePath}
+                  key={''}
+                />
               );
             })}
           </ul>

@@ -4,19 +4,17 @@ import Pagination from '../components/Global/Pagination';
 import { getPosts } from '../libs/ghost';
 import React from 'react';
 
-
 export default async function Home() {
   const getPost: any = await getPosts();
 
   return (
-    <div className='md:container px-5 md:px-0 mx-auto'>
+    <div className='mx-auto px-5 md:container md:px-0'>
       <div className='flex'>
-        <div className='flex-auto flex-col basis-4/6 py-2 divide-y'>
+        <div className='flex-auto basis-4/6 flex-col divide-y py-2'>
           {getPost.map((item: any) => {
-
             var excerpt;
 
-            if(!item.custom_excerpt){
+            if (!item.custom_excerpt) {
               excerpt = `${item.excerpt}..`;
             } else {
               excerpt = item.custom_excerpt;
@@ -34,7 +32,7 @@ export default async function Home() {
             );
           })}
         </div>
-        <div className='flex-auto flex-col hidden md:flex md:basis-2/6 pt-2'>
+        <div className='hidden flex-auto flex-col pt-2 md:flex md:basis-2/6'>
           <SidebarInfo />
         </div>
       </div>

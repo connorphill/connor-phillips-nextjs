@@ -7,25 +7,25 @@ export default function TopNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
   // const [mobileClick, setMobileClick] = useState(false);
 
-const useOutsideClick = (callback: () => void) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const useOutsideClick = (callback: () => void) => {
+    const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
-        callback();
-      }
-    };
+    useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (ref.current && !ref.current.contains(event.target as Node)) {
+          callback();
+        }
+      };
 
-    document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
 
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [callback]);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [callback]);
 
-  return ref;
-};
+    return ref;
+  };
 
   const ref = useOutsideClick(() => {
     setMobileMenu(false);
@@ -36,16 +36,16 @@ const useOutsideClick = (callback: () => void) => {
       <div className='container relative mx-auto flex items-center justify-between py-4'>
         {/* Logo */}
         <div className='flex flex-col md:flex-row'>
-          <h2 className='text-3xl lg:text-5xl font-bold'>
+          <h2 className='text-3xl font-bold lg:text-5xl'>
             <a href='/'>Connor Phillips</a>
           </h2>
         </div>
         {/* Primary Nav */}
-        <div className='hidden lg:flex ml-20'>
+        <div className='ml-20 hidden lg:flex'>
           <TopNavLinks setMobileMenu={setMobileMenu as () => void} />
         </div>
         {/* Primary Nav */}
-        <div className='hidden lg:flex ml-20'>
+        <div className='ml-20 hidden lg:flex'>
           <SocialLinks />
         </div>
         {/* Theme Switcher */}
@@ -53,7 +53,7 @@ const useOutsideClick = (callback: () => void) => {
           <ThemeSwitcher />
         </div> */}
         {/* Mobile Button */}
-        <div className='lg:hidden flex items-center'>
+        <div className='flex items-center lg:hidden'>
           <button
             onClick={() => {
               setMobileMenu(!mobileMenu);
@@ -65,7 +65,7 @@ const useOutsideClick = (callback: () => void) => {
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='w-6 h-6'
+              className='h-6 w-6'
             >
               <path
                 strokeLinecap='round'
@@ -78,11 +78,13 @@ const useOutsideClick = (callback: () => void) => {
       </div>
       {/* Mobile Menu */}
       <div
-        className={`container flex flex-col mx-auto lg:hidden transition-opacity ease-in-out delay-150 duration-300 ${ mobileMenu ? 'opacity-100 visible h-full' : 'opacity-0 invisible h-0'}`}
+        className={`container mx-auto flex flex-col transition-opacity delay-150 duration-300 ease-in-out lg:hidden ${
+          mobileMenu ? 'visible h-full opacity-100' : 'invisible h-0 opacity-0'
+        }`}
         id='mobile-menu'
       >
         <div className='flex flex-row'>
-        <TopNavLinks setMobileMenu={setMobileMenu as () => void} />
+          <TopNavLinks setMobileMenu={setMobileMenu as () => void} />
         </div>
         <SocialLinks />
       </div>

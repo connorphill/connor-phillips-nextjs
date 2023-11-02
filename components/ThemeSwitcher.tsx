@@ -16,7 +16,7 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      className={`p-2 rounded-md hover:scale-110 active:scale-100 duration-200 bg-slate-200 dark:bg-[#212933]`}
+      className={`rounded-md bg-slate-200 p-2 duration-200 hover:scale-110 active:scale-100 dark:bg-[#212933]`}
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
       {theme === 'light' ? (
@@ -26,7 +26,7 @@ export const ThemeSwitcher = () => {
           viewBox='0 0 24 24'
           strokeWidth={1.5}
           stroke='currentColor'
-          className='w-6 h-6'
+          className='h-6 w-6'
         >
           <path
             strokeLinecap='round'
@@ -41,7 +41,7 @@ export const ThemeSwitcher = () => {
           viewBox='0 0 24 24'
           strokeWidth={1.5}
           stroke='currentColor'
-          className='w-6 h-6'
+          className='h-6 w-6'
         >
           <path
             strokeLinecap='round'

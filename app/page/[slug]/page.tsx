@@ -26,7 +26,7 @@ export default async function PagePosts({
   return (
     <div className='container mx-auto'>
       <div className='flex'>
-        <div className='flex-auto flex-col basis-4/6 py-2 divide-y'>
+        <div className='flex-auto basis-4/6 flex-col divide-y py-2'>
           {getPost.map((item: PostJSONProps) => {
             if (
               item?.feature_image &&
@@ -46,7 +46,7 @@ export default async function PagePosts({
             );
           })}
         </div>
-        <div className='flex-auto flex-col hidden md:flex md:basis-2/6 pt-2'>
+        <div className='hidden flex-auto flex-col pt-2 md:flex md:basis-2/6'>
           <SidebarInfo />
         </div>
       </div>

@@ -1,31 +1,32 @@
 import React from 'react';
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About | Connor Phillips',
   alternates: {
-      canonical: `/about/`,
+    canonical: `/about/`,
   },
   openGraph: {
-        url: '/about/',
-        title: 'About | Connor Phillips',
+    url: '/about/',
+    title: 'About | Connor Phillips',
   },
   twitter: {
     title: 'About | Connor Phillips',
-  }
-}
-
+  },
+};
 
 export default async function About() {
   return (
     <div className='container mx-auto'>
       <div className='py-10' id='introduction'>
-        <h1 className='text-3xl lg:text-5xl font-semibold text-midnight-500'>About</h1>
+        <h1 className='text-3xl font-semibold text-midnight-500 lg:text-5xl'>
+          About
+        </h1>
         <div className='py-3'>
           <p className='py-2'>
-            Data leader with over a decade of startup and agency
-            experience helping B2C and B2B businesses with their mobile app and
-            web-based products.
+            Data leader with over a decade of startup and agency experience
+            helping B2C and B2B businesses with their mobile app and web-based
+            products.
           </p>
           <p className='py-2'>
             I have led a wide range of marketing analytics initiatives including
@@ -35,14 +36,24 @@ export default async function About() {
           <p className='py-2'>
             Currently, I lead the US Analytics team at the growth marketing
             agency,
-            <a href='https://twigeo.com/' className='text-gold-600 hover:text-gold-700'>&nbsp;Twigeo</a>, working with
-            growth-focused clients ranging in industries from ride share to
-            language learning.
+            <a
+              href='https://twigeo.com/'
+              className='text-gold-600 hover:text-gold-700'
+            >
+              &nbsp;Twigeo
+            </a>
+            , working with growth-focused clients ranging in industries from
+            ride share to language learning.
           </p>
           <p className='py-2'>
             Prior to Twigeo, I helped establish and lead marketing and sales
             analytics at ShopKeep, which was acquired by
-            <a href='https://www.lightspeedhq.com/' className='text-gold-600 hover:text-gold-700'>&nbsp;Lightspeed Commerce</a>
+            <a
+              href='https://www.lightspeedhq.com/'
+              className='text-gold-600 hover:text-gold-700'
+            >
+              &nbsp;Lightspeed Commerce
+            </a>
             (NYSE: LSPD) in 2020.
           </p>
           <p className='py-2'>
@@ -50,9 +61,9 @@ export default async function About() {
             photographer and love working on side projects to learn new software
             development languages.
           </p>
-          <div className='border-solid border-2 p-2 mt-5 border-gold-500'>
-            <h2 className='text-3xl pt-3 text-gold-500'>Highlights</h2>
-            <ul className='py-5 px-4 list-disc space-y-3'>
+          <div className='mt-5 border-2 border-solid border-gold-500 p-2'>
+            <h2 className='pt-3 text-3xl text-gold-500'>Highlights</h2>
+            <ul className='list-disc space-y-3 px-4 py-5'>
               <li>
                 Helped establish and lead Marketing &amp; Sales Analytics for
                 ShopKeep to its first EBITDA positive year in the decade of the
@@ -82,15 +93,15 @@ export default async function About() {
       </div>
       <div className='py-3' id='skills'>
         <h2 className='text-5xl text-midnight-400'>Skills</h2>
-        <div className='flex flex-col lg:flex-row mt-5 justify-around md:space-x-4 space-y-5 md:space-y-0'>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-midnight-500'>
-            <h3 className='text-2xl flex items-center '>
+        <div className='mt-5 flex flex-col justify-around space-y-5 md:space-x-4 md:space-y-0 lg:flex-row'>
+          <div className='flex flex-col border-2 border-solid border-midnight-500 px-3 py-2'>
+            <h3 className='flex items-center text-2xl '>
               <svg
                 width='512'
                 height='512'
                 viewBox='0 0 48 48'
                 xmlns='http://www.w3.org/2000/svg'
-                className='w-6 h-6 mr-2'
+                className='mr-2 h-6 w-6'
               >
                 <mask id='ipSData0'>
                   <g
@@ -117,7 +128,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 16 16'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -132,7 +143,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 20 20'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <g fill='#000000' fillRule='evenodd' clipRule='evenodd'>
                       <path d='M5 9a2 2 0 1 0 0-4a2 2 0 0 0 0 4Zm0 1a3 3 0 1 0 0-6a3 3 0 0 0 0 6Z' />
@@ -149,7 +160,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 48 48'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <g fill='none'>
                       <rect
@@ -187,7 +198,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 32 32'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -202,7 +213,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 36 36'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -231,7 +242,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 256 256'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <g
                       id='galaData0'
@@ -279,7 +290,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 24 24'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -291,15 +302,15 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-midnight-500'>
-            <h3 className='text-2xl flex items-center'>
+          <div className='flex flex-col border-2 border-solid border-midnight-500 px-3 py-2'>
+            <h3 className='flex items-center text-2xl'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
                 viewBox='0 0 24 24'
                 strokeWidth={1.5}
                 stroke='currentColor'
-                className='w-6 h-6 mr-2'
+                className='mr-2 h-6 w-6'
               >
                 <path
                   strokeLinecap='round'
@@ -317,7 +328,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 24 24'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -332,7 +343,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 24 24'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -347,7 +358,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 256 256'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -362,7 +373,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 24 24'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -377,7 +388,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 256 256'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -392,7 +403,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 24 24'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='none'
@@ -408,14 +419,14 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-midnight-500'>
-            <h3 className='text-2xl flex items-center'>
+          <div className='flex flex-col border-2 border-solid border-midnight-500 px-3 py-2'>
+            <h3 className='flex items-center text-2xl'>
               <svg
                 width='512'
                 height='512'
                 viewBox='0 0 24 24'
                 xmlns='http://www.w3.org/2000/svg'
-                className='w-6 h-6 mr-2'
+                className='mr-2 h-6 w-6'
               >
                 <path
                   fill='#000000'
@@ -432,7 +443,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 24 24'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -447,7 +458,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 32 32'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -462,7 +473,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 24 24'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -477,7 +488,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 24 24'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -492,7 +503,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 24 24'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='none'
@@ -508,15 +519,15 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-midnight-500'>
-            <h3 className='text-2xl flex items-center'>
+          <div className='flex flex-col border-2 border-solid border-midnight-500 px-3 py-2'>
+            <h3 className='flex items-center text-2xl'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
                 viewBox='0 0 24 24'
                 strokeWidth={1.5}
                 stroke='currentColor'
-                className='w-6 h-6 mr-2'
+                className='mr-2 h-6 w-6'
               >
                 <path
                   strokeLinecap='round'
@@ -534,7 +545,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 24 24'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -549,7 +560,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 128 128'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -564,7 +575,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 128 128'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <g fill='#000000'>
                       <path d='M80.6 40.3h.4l-.2-.2l14-14v-.3c-11.8-10.4-28.1-14-43.2-9.5C36.5 20.8 24.9 32.8 20.7 48c.2-.1.5-.2.8-.2c5.2-3.4 11.4-5.4 17.9-5.4c2.2 0 4.3.2 6.4.6c.1-.1.2-.1.3-.1c9-9.9 24.2-11.1 34.6-2.6h-.1z' />
@@ -581,7 +592,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 32 32'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -593,15 +604,15 @@ export default async function About() {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col py-2 px-3 border-solid border-2 border-midnight-500'>
-            <h3 className='text-2xl flex items-center'>
+          <div className='flex flex-col border-2 border-solid border-midnight-500 px-3 py-2'>
+            <h3 className='flex items-center text-2xl'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
                 viewBox='0 0 24 24'
                 strokeWidth={1.5}
                 stroke='currentColor'
-                className='w-6 h-6 mr-2'
+                className='mr-2 h-6 w-6'
               >
                 <path
                   strokeLinecap='round'
@@ -619,7 +630,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 128 128'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -634,7 +645,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 128 128'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -649,7 +660,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 128 128'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'
@@ -664,7 +675,7 @@ export default async function About() {
                     height='512'
                     viewBox='0 0 128 128'
                     xmlns='http://www.w3.org/2000/svg'
-                    className='w-6 h-6 mr-2'
+                    className='mr-2 h-6 w-6'
                   >
                     <path
                       fill='#000000'

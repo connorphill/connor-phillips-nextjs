@@ -6,13 +6,12 @@ interface LinkProps {
   setMobileMenu: () => void;
 }
 
-
 export default function TopNavLinks({ setMobileMenu }: LinkProps) {
   const handleLinkClick = () => {
-    setMobileMenu() // Close the mobile menu when a link is clicked
+    setMobileMenu(); // Close the mobile menu when a link is clicked
   };
   return (
-    <ul className='flex flex-col space-y-5 pt-5 lg:pt-0 lg:space-y-0 lg:flex-row lg:space-x-10'>
+    <ul className='flex flex-col space-y-5 pt-5 lg:flex-row lg:space-x-10 lg:space-y-0 lg:pt-0'>
       <TopicsNav />
       <li className='flex flex-row'>
         <svg
@@ -21,7 +20,7 @@ export default function TopNavLinks({ setMobileMenu }: LinkProps) {
           viewBox='0 0 24 24'
           strokeWidth={1.5}
           stroke='currentColor'
-          className='w-6 h-6'
+          className='h-6 w-6'
         >
           <path
             strokeLinecap='round'
@@ -31,7 +30,14 @@ export default function TopNavLinks({ setMobileMenu }: LinkProps) {
         </svg>
 
         <p className='ml-2'>
-          <Link href='/portfolio' onClick={() => { handleLinkClick() }}>Portfolio</Link>
+          <Link
+            href='/portfolio'
+            onClick={() => {
+              handleLinkClick();
+            }}
+          >
+            Portfolio
+          </Link>
         </p>
       </li>
       <li className='flex flex-row'>
@@ -41,7 +47,7 @@ export default function TopNavLinks({ setMobileMenu }: LinkProps) {
           viewBox='0 0 24 24'
           strokeWidth={1.5}
           stroke='currentColor'
-          className='w-6 h-6'
+          className='h-6 w-6'
         >
           <path
             strokeLinecap='round'
@@ -50,7 +56,14 @@ export default function TopNavLinks({ setMobileMenu }: LinkProps) {
           />
         </svg>
         <p className='ml-2'>
-          <Link href='/about' onClick={() => { handleLinkClick()  }}>About</Link>
+          <Link
+            href='/about'
+            onClick={() => {
+              handleLinkClick();
+            }}
+          >
+            About
+          </Link>
         </p>
       </li>
     </ul>

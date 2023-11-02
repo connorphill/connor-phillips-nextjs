@@ -22,8 +22,8 @@ export default function Card({
 }: CardProps) {
   return (
     <div>
-      <div className='flex flex-col lg:flex-row justify-center py-3'>
-        <div className='lg:mx-auto overflow-hidden lg:h-full relative lg:order-last lg:basis-2/6 md:pl-5'>
+      <div className='flex flex-col justify-center py-3 lg:flex-row'>
+        <div className='relative overflow-hidden md:pl-5 lg:order-last lg:mx-auto lg:h-full lg:basis-2/6'>
           <Link href={`/${slug}`}>
             {image ? (
               <ImageHandler src={image} width={600} height={400} alt={title} />
@@ -33,12 +33,12 @@ export default function Card({
         <div className='py-2 md:basis-4/6' id='card-body'>
           <Link
             href={`/tag/${primary_tag.toLowerCase()}`}
-            className='pb-3 text-gold-600 hover:text-gold-700 hover:before:scale-x-100 hover:before:origin-left text-md lg:text-xl relative'
+            className='text-md relative pb-3 text-gold-600 hover:text-gold-700 hover:before:origin-left hover:before:scale-x-100 lg:text-xl'
             id='card-tag'
           >
             {primary_tag}
           </Link>
-          <h2 className='text-3xl lg:text-5xl py-3'>
+          <h2 className='py-3 text-3xl lg:text-5xl'>
             <Link
               href={`/${slug}`}
               className='text-midnight-400 hover:text-midnight-700'
