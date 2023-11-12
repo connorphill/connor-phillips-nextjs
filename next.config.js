@@ -4,20 +4,16 @@ const nextConfig = {
   poweredByHeader: false,
   images: {
     domains: ['s3.amazonaws.com', 'images.unsplash.com'],
-    // remotePatterns: [
-    //   {
-    //     protocol: 'https',
-    //     hostname: 's3.amazonaws.com',
-    //     port: '',
-    //     pathname: '/ghost-blogpost-images/**',
-    //   },
-    //   {
-    //     protocol: 'https',
-    //     hostname: 's3.amazonaws.com',
-    //     port: '',
-    //     pathname: '/data-analyst-academy-blog/**',
-    //   },
-    // ],
+  },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'example.com' }],
+        destination: 'https://www.connorphillips.com/:path*',
+        permanent: true,
+      },
+    ];
   },
 };
 
