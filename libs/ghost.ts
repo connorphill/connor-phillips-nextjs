@@ -8,16 +8,26 @@ const api: any = new GhostContentAPI({
   version: 'v5.0',
 });
 
+const url = `https://admin.connorphillips.com/ghost/api/content/posts/?key=${process.env.GHOST_CONTENT_API}`;
+
 // GET all posts
 export const getPosts = async () => {
-  return await api.posts
-    .browse({
-      include: 'tags',
-      limit: '10',
-    })
-    .catch((err: any) => {
-      console.error(err);
+  try {
+    const response = await fetch(`${url}&include=tags&limit=10`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept-Version': 'v5.0',
+      },
+      next: { revalidate: 10 },
     });
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 };
 
 // GET all posts for sitemap
@@ -40,17 +50,27 @@ export async function getPostsSitemap() {
 }
 
 // GET posts by page
-export const getPostsByPage = cache(async (pageNum: number) => {
-  return await api.posts
-    .browse({
-      include: 'tags',
-      limit: 10,
-      page: pageNum,
-    })
-    .catch((err: any) => {
-      console.error(err);
-    });
-});
+export const getPostsByPage = async (pageNum: number) => {
+  try {
+    const response = await fetch(
+      `${url}&include=tags&limit=10&page=${pageNum}`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept-Version': 'v5.0',
+        },
+        next: { revalidate: 10 },
+      }
+    );
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
 
 // GET single post by post slug
 export const getSinglePost = cache(async (postSlug: String) => {
@@ -77,7 +97,7 @@ export const getSingleTag = cache(async (tagSlug: String) => {
 });
 
 // GET all posts by tag slug
-export const getPostsFromTag = cache(async (tagSlug: String) => {
+export const getPostsFromTag = async (tagSlug: String) => {
   return await api.posts
     .browse({
       filter: `tag:${tagSlug}`,
@@ -86,10 +106,10 @@ export const getPostsFromTag = cache(async (tagSlug: String) => {
     .catch((err: any) => {
       console.error(err);
     });
-});
+};
 
 // GET all tags
-export const getTags = cache(async () => {
+export const getTags = async () => {
   return await api.tags
     .browse({
       limit: 'all',
@@ -97,7 +117,7 @@ export const getTags = cache(async () => {
     .catch((err: any) => {
       console.error(err);
     });
-});
+};
 
 // GET all tags for sitemap xml
 export async function getTagsSitemap() {
