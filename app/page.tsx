@@ -11,11 +11,11 @@ export default async function Home() {
     <div className='mx-auto px-5 md:container md:px-0'>
       <div className='flex'>
         <div className='flex-auto basis-4/6 flex-col divide-y py-2'>
-          {getPost.map((item: any) => {
+          {getPost.posts.map((item: any) => {
             var excerpt;
 
             if (!item.custom_excerpt) {
-              excerpt = `${item.excerpt}..`;
+              excerpt = `${item.excerpt}...`;
             } else {
               excerpt = item.custom_excerpt;
             }
@@ -24,7 +24,7 @@ export default async function Home() {
               <Card
                 title={item.title}
                 custom_excerpt={excerpt}
-                primary_tag={item.primary_tag.name}
+                primary_tag={item?.primary_tag?.name}
                 slug={item.slug}
                 image={item.feature_image}
                 key={''}

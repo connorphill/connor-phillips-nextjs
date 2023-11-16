@@ -32,8 +32,8 @@ export default function Card({
         </div>
         <div className='py-2 md:basis-4/6' id='card-body'>
           <Link
-            href={`/tag/${primary_tag.toLowerCase()}`}
-            className='text-md relative pb-3 text-gold-600 hover:text-gold-700 hover:before:origin-left hover:before:scale-x-100 lg:text-xl'
+            href={`/tag/${primary_tag?.toLowerCase()}`}
+            className='text-md text-gold-600 hover:text-gold-700 relative pb-3 hover:before:origin-left hover:before:scale-x-100 lg:text-xl'
             id='card-tag'
           >
             {primary_tag}
